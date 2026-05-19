@@ -1,0 +1,204 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import CtaButton from "../../components/CtaButton.astro";
+---
+
+<BaseLayout
+    title="depero - erfolgreiche Softwareentwicklung für Startups"
+    description="Du hast eine geniale Idee für ein Startup und suchst die richtigen Softwareentwickler? depero ist dein Entwicklungspartner für MVP, Prototyping und mehr."
+>
+    <main>
+        <section
+            class="page-hero"
+            style="background: linear-gradient(300deg, #fcdabd, #cbdef4)"
+        >
+            <div class="container">
+                <p class="breadcrumb">Home > Startup-Zusammenarbeit</p>
+                <h1 class="page-title">
+                    Erfolgreiche Softwareentwicklung für Startups
+                </h1>
+                <p class="page-subtitle">depero als Dein Entwicklungspartner</p>
+            </div>
+        </section>
+
+        <section class="section-padding">
+            <div class="container content-width">
+                <p class="intro-text">
+                    Du hast eine geniale Idee für ein Startup, einen Investor an
+                    der Hand und bist bereit durchzustarten. Doch da stehst du
+                    vor einer der größten Herausforderungen: die richtigen
+                    Softwareentwickler zu finden.
+                </p>
+            </div>
+        </section>
+
+        <section class="section-padding" style="background: var(--light-bg)">
+            <div class="container content-width">
+                <h2 class="section-heading">
+                    Die Herausforderung der richtigen Softwareentwickler
+                </h2>
+                <p>
+                    Selbst mit einer bahnbrechenden Idee und einem Investor im
+                    Rücken, kann die Suche nach den passenden
+                    Softwareentwicklern frustrierend sein.
+                </p>
+
+                <h2 class="section-heading">IT-Umsetzung für Startups</h2>
+                <p>
+                    Strategische Vorgehensweise mit Lean Canvas und Lean
+                    Startup, gepaart mit agilen Prinzipien wie Scrum.
+                </p>
+
+                <h2 class="section-heading">Strategische Vorgehensweise</h2>
+                <p>
+                    Lean Canvas zur Zusammenfassung der Idee, als Grundlage für
+                    die Softwareentwicklung.
+                </p>
+
+                <h2 class="section-heading">Lean Startup und Scrum</h2>
+                <p>
+                    Schnelle Markteinführung eines MVP, agile Entwicklung in
+                    Sprints.
+                </p>
+
+                <h2 class="section-heading">
+                    Budgetsicherheit und Transparenz
+                </h2>
+                <p>Einhaltung des Budgets, Transparenz in den Kosten.</p>
+
+                <h2 class="section-heading">
+                    Werte wie Vertrauen, Offenheit und Visionstreue
+                </h2>
+                <p>
+                    Erfolgreiche Zusammenarbeit basiert auf Vertrauen und
+                    Offenheit.
+                </p>
+
+                <h2 class="section-heading">
+                    Anforderungsflexibilität und Frühzeitiges Erkennen von
+                    Problemen
+                </h2>
+                <p>Agile Anpassung an geänderte Anforderungen.</p>
+
+                <h2 class="section-heading">
+                    Hohe Qualität in Design und Entwicklung
+                </h2>
+            </div>
+        </section>
+
+        <section class="section-padding">
+            <div class="container content-width">
+                <h2 class="section-heading">
+                    depero als Entwicklungspartner — Services:
+                </h2>
+                <ul class="service-list">
+                    <li>MVP & Prototyping</li>
+                    <li>Cloudbasierte Back-End und Front-End Entwicklung</li>
+                    <li>App-Entwicklung in Android und iOS</li>
+                    <li>Software und Datenbank Design</li>
+                    <li>Virtueller CTO-Service für Startups</li>
+                    <li>Software Testing</li>
+                    <li>Weiterentwicklung und Wartung</li>
+                </ul>
+            </div>
+        </section>
+
+        <section
+            class="section-padding section-cta"
+            style="background: var(--light-bg)"
+        >
+            <div class="container" style="text-align: center">
+                <p class="cta-text">
+                    Starte jetzt durch und bringe deine Idee mit depero auf die
+                    nächste Stufe!
+                </p>
+                <CtaButton href="/kontakt/" label="Jetzt durchstarten" />
+            </div>
+        </section>
+    </main>
+</BaseLayout>
+
+<style>
+    .page-hero {
+        padding: 140px 0 60px;
+        margin-top: 70px;
+    }
+
+    .breadcrumb {
+        font-size: 0.85rem;
+        color: #666;
+        margin-bottom: 16px;
+    }
+
+    .page-title {
+        font-size: 2.8rem;
+        font-weight: 700;
+        margin-bottom: 12px;
+    }
+
+    .page-subtitle {
+        font-size: 1.2rem;
+        color: #555;
+    }
+
+    .content-width {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .intro-text {
+        font-size: 1.15rem;
+        line-height: 1.8;
+        color: #444;
+    }
+
+    .section-heading {
+        font-size: 1.5rem;
+        margin-top: 40px;
+        margin-bottom: 16px;
+        color: var(--dark);
+    }
+
+    .section-heading:first-child {
+        margin-top: 0;
+    }
+
+    .content-width p {
+        font-size: 1rem;
+        line-height: 1.7;
+        color: #555;
+        margin-bottom: 16px;
+    }
+
+    .service-list {
+        list-style: none;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+        margin-top: 20px;
+    }
+
+    .service-list li {
+        padding: 12px 16px;
+        background: var(--light-bg);
+        border-radius: 8px;
+        font-size: 0.95rem;
+        border-left: 3px solid var(--accent);
+    }
+
+    .cta-text {
+        font-size: 1.4rem;
+        font-family: var(--font-heading);
+        margin-bottom: 24px;
+    }
+
+    @media (max-width: 750px) {
+        .page-title {
+            font-size: 1.8rem;
+        }
+
+        .service-list {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>

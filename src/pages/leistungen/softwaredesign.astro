@@ -1,0 +1,208 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import CtaButton from "../../components/CtaButton.astro";
+---
+
+<BaseLayout
+    title="depero Softwaredesign - Ihr Weg zur individuellen Exzellenz"
+    description="Die Gestaltung von Softwarelösungen, die Ihren Anforderungen gerecht werden. depero begleitet Sie von der Anforderungsanalyse bis zum Support."
+>
+    <main>
+        <section
+            class="page-hero"
+            style="background: linear-gradient(300deg, #c5daf9, #dbffea)"
+        >
+            <div class="container">
+                <p class="breadcrumb">Home > Softwaredesign</p>
+                <h1 class="page-title">Die Kunst des Softwaredesigns</h1>
+                <p class="page-subtitle">Ihr Weg zur individuellen Exzellenz</p>
+            </div>
+        </section>
+
+        <section class="section-padding">
+            <div class="container content-width">
+                <blockquote class="quote">
+                    "Die Gestaltung von Softwarelösungen, die Ihren
+                    Anforderungen gerecht werden, ist bei depero weit mehr als
+                    nur ein handwerklicher Prozess."
+                </blockquote>
+            </div>
+        </section>
+
+        <section class="section-padding" style="background: var(--light-bg)">
+            <div class="container content-width">
+                <h2 class="section-heading">Der Weg zur Software-Exzellenz</h2>
+
+                <div class="step">
+                    <span class="step-num">1</span>
+                    <div>
+                        <h3 class="step-title">
+                            Anforderungsanalyse: Die Grundlage legen
+                        </h3>
+                        <p>
+                            Tiefgehende Anforderungsanalyse, enge Zusammenarbeit
+                            mit Kunden.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <span class="step-num">2</span>
+                    <div>
+                        <h3 class="step-title">
+                            Konzeption und Planung: Die Vision schärfen
+                        </h3>
+                        <p>
+                            Grundlegende Struktur, Technologieauswahl,
+                            Architektur.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <span class="step-num">3</span>
+                    <div>
+                        <h3 class="step-title">
+                            Benutzeroberflächendesign (UI/UX): Die
+                            Benutzererfahrung gestalten
+                        </h3>
+                        <p>Funktional, benutzerfreundlich und ansprechend.</p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <span class="step-num">4</span>
+                    <div>
+                        <h3 class="step-title">
+                            Technische Umsetzung: Den Code schreiben
+                        </h3>
+                        <p>Effizient, sicher und skalierbar.</p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <span class="step-num">5</span>
+                    <div>
+                        <h3 class="step-title">
+                            Testing und Qualitätskontrolle: Fehler finden, bevor
+                            sie auftreten
+                        </h3>
+                        <p>Umfangreiche Tests.</p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <span class="step-num">6</span>
+                    <div>
+                        <h3 class="step-title">
+                            Bereitstellung und Support: Ihr Erfolg, unser
+                            Engagement
+                        </h3>
+                        <p>Kontinuierlicher Support und Wartung.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-padding section-cta">
+            <div class="container" style="text-align: center">
+                <p class="cta-text">
+                    Ihre Vision, unser Engagement — Lassen Sie uns gemeinsam die
+                    Reise beginnen.
+                </p>
+                <CtaButton href="/kontakt/" label="Details erkunden" />
+            </div>
+        </section>
+    </main>
+</BaseLayout>
+
+<style>
+    .page-hero {
+        padding: 140px 0 60px;
+        margin-top: 70px;
+    }
+
+    .breadcrumb {
+        font-size: 0.85rem;
+        color: #666;
+        margin-bottom: 16px;
+    }
+
+    .page-title {
+        font-size: 2.8rem;
+        font-weight: 700;
+        margin-bottom: 12px;
+    }
+
+    .page-subtitle {
+        font-size: 1.2rem;
+        color: #555;
+    }
+
+    .content-width {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .quote {
+        font-size: 1.3rem;
+        font-family: var(--font-heading);
+        font-style: italic;
+        color: #555;
+        border-left: 4px solid var(--accent);
+        padding: 20px 24px;
+        margin: 0;
+        line-height: 1.6;
+    }
+
+    .section-heading {
+        font-size: 1.5rem;
+        margin-bottom: 32px;
+        color: var(--dark);
+    }
+
+    .step {
+        display: flex;
+        gap: 20px;
+        margin-bottom: 28px;
+        align-items: flex-start;
+    }
+
+    .step-num {
+        flex-shrink: 0;
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        background: var(--accent);
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+        font-size: 1.1rem;
+    }
+
+    .step-title {
+        font-family: var(--font-heading);
+        font-size: 1.15rem;
+        margin-bottom: 6px;
+    }
+
+    .step p {
+        font-size: 1rem;
+        color: #555;
+        line-height: 1.6;
+    }
+
+    .cta-text {
+        font-size: 1.4rem;
+        font-family: var(--font-heading);
+        margin-bottom: 24px;
+    }
+
+    @media (max-width: 750px) {
+        .page-title {
+            font-size: 1.8rem;
+        }
+    }
+</style>

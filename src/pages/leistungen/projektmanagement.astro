@@ -1,0 +1,159 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import CtaButton from "../../components/CtaButton.astro";
+---
+
+<BaseLayout
+    title="Projektmanagement - Softwareentwicklung nach Maß"
+    description="Die Kunst der Softwareentwicklung nach Maß. depero steht für termingerechte, budgettreue und qualitativ hochwertige Projekte."
+>
+    <main>
+        <section
+            class="page-hero"
+            style="background: linear-gradient(300deg, #fcdbcf, #d4f4e9)"
+        >
+            <div class="container">
+                <p class="breadcrumb">Home > Projektmanagement</p>
+                <h1 class="page-title">Projektmanagement</h1>
+                <p class="page-subtitle">
+                    Die Kunst der Softwareentwicklung nach Maß - Ihre Wünsche,
+                    unsere Passion!
+                </p>
+            </div>
+        </section>
+
+        <section class="section-padding">
+            <div class="container content-width">
+                <div class="section-card">
+                    <h2 class="section-heading">
+                        Unsere Leidenschaft für Ihre Vision
+                    </h2>
+                    <p>
+                        Jede Idee ist einzigartig. Wir brennen dafür, Ihre
+                        Vision in die Realität umzusetzen und Produkte zu
+                        schaffen, die begeistern.
+                    </p>
+                </div>
+
+                <div class="section-card">
+                    <h2 class="section-heading">Individuelle Lösungen</h2>
+                    <p>
+                        Maßgeschneiderte Software, nahtlos integriert in Ihre
+                        bestehende Systemlandschaft. Keine Standardlösungen,
+                        sondern perfekt auf Sie zugeschnitten.
+                    </p>
+                </div>
+
+                <div class="section-card">
+                    <h2 class="section-heading">
+                        Projektmanagement vom Feinsten
+                    </h2>
+                    <p>
+                        Termingerecht, im Budget, hohe Qualität. Unser
+                        Projektmanagement stellt sicher, dass Ihre Erwartungen
+                        nicht nur erfüllt, sondern übertroffen werden.
+                    </p>
+                </div>
+
+                <div class="section-card">
+                    <h2 class="section-heading">Die Macht der Kommunikation</h2>
+                    <p>
+                        Transparenz und offener Austausch sind der Schlüssel zum
+                        Erfolg. Wir halten Sie jederzeit über den Fortschritt
+                        Ihres Projekts auf dem Laufenden.
+                    </p>
+                </div>
+
+                <div class="section-card">
+                    <h2 class="section-heading">
+                        Ihr Erfolg ist unser Erfolg!
+                    </h2>
+                    <p>
+                        Langfristige Partnerschaften stehen im Mittelpunkt
+                        unserer Arbeit. Wir sehen uns nicht nur als
+                        Dienstleister, sondern als Teil Ihres Teams.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section
+            class="section-padding section-cta"
+            style="background: var(--light-bg)"
+        >
+            <div class="container" style="text-align: center">
+                <p class="cta-text">
+                    Kontaktieren Sie uns und erleben Sie den Unterschied, den
+                    echte Leidenschaft und maßgeschneiderte Lösungen bewirken
+                    können.
+                </p>
+                <CtaButton href="/kontakt/" label="Jetzt kontaktieren" />
+            </div>
+        </section>
+    </main>
+</BaseLayout>
+
+<style>
+    .page-hero {
+        padding: 140px 0 60px;
+        margin-top: 70px;
+    }
+
+    .breadcrumb {
+        font-size: 0.85rem;
+        color: #666;
+        margin-bottom: 16px;
+    }
+
+    .page-title {
+        font-size: 2.8rem;
+        font-weight: 700;
+        margin-bottom: 12px;
+    }
+
+    .page-subtitle {
+        font-size: 1.2rem;
+        color: #555;
+    }
+
+    .content-width {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .section-card {
+        margin-bottom: 32px;
+        padding: 28px;
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        transition: box-shadow 0.2s;
+    }
+
+    .section-card:hover {
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    }
+
+    .section-heading {
+        font-size: 1.3rem;
+        margin-bottom: 12px;
+        color: var(--dark);
+    }
+
+    .section-card p {
+        font-size: 1rem;
+        line-height: 1.7;
+        color: #555;
+    }
+
+    .cta-text {
+        font-size: 1.4rem;
+        font-family: var(--font-heading);
+        margin-bottom: 24px;
+    }
+
+    @media (max-width: 750px) {
+        .page-title {
+            font-size: 1.8rem;
+        }
+    }
+</style>

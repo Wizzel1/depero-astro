@@ -1,0 +1,133 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import CtaButton from "../../components/CtaButton.astro";
+---
+
+<BaseLayout
+    title="Produktentwicklung - Ihre Ideen, unsere Umsetzung"
+    description="Von der Innovation eines Startups bis zur Weiterentwicklung etablierter Projekte. depero bringt Ihre Visionen zum Leben."
+>
+    <main>
+        <section
+            class="page-hero"
+            style="background: linear-gradient(300deg, #fbe0fc, #bbf9e7)"
+        >
+            <div class="container">
+                <p class="breadcrumb">Home > Produktentwicklung</p>
+                <h1 class="page-title">
+                    depero – Ihre IT-Partner für maßgeschneiderte
+                    Softwarelösungen
+                </h1>
+            </div>
+        </section>
+
+        <section class="section-padding">
+            <div class="container content-width">
+                <p class="intro-text">
+                    "Von der Innovation eines Startups bis zur Weiterentwicklung
+                    etablierter Projekte, bringen wir Ihre Visionen zum Leben.
+                    Leidenschaftlich. Kreativ. Zuverlässig."
+                </p>
+            </div>
+        </section>
+
+        <section class="section-padding" style="background: var(--light-bg)">
+            <div class="container content-width">
+                <h2 class="section-heading">Was macht uns besonders?</h2>
+                <ul class="usp-list">
+                    <li>
+                        Softwareentwicklung ist unsere Leidenschaft, nicht nur
+                        ein Job
+                    </li>
+                    <li>
+                        Entwickler sind kreative Problemlöser, keine bloßen
+                        Code-Schreiber
+                    </li>
+                    <li>Startups lieben uns, weil wir Startups lieben</li>
+                    <li>
+                        Expertise in der Weiterentwicklung bestehender
+                        Softwarelösungen (Legacy-Systeme)
+                    </li>
+                    <li>Kunden sind unsere Inspiration</li>
+                    <li>Maßgeschneiderte Lösungen, nicht von der Stange</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="section-padding section-cta">
+            <div class="container" style="text-align: center">
+                <p class="cta-text">
+                    Kontaktieren Sie uns heute und lassen Sie uns gemeinsam
+                    etwas Großartiges schaffen!
+                </p>
+                <CtaButton href="/kontakt/" label="Jetzt kontaktieren" />
+            </div>
+        </section>
+    </main>
+</BaseLayout>
+
+<style>
+    .page-hero {
+        padding: 140px 0 60px;
+        margin-top: 70px;
+    }
+
+    .breadcrumb {
+        font-size: 0.85rem;
+        color: #666;
+        margin-bottom: 16px;
+    }
+
+    .page-title {
+        font-size: 2.8rem;
+        font-weight: 700;
+        margin-bottom: 12px;
+    }
+
+    .content-width {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .intro-text {
+        font-size: 1.3rem;
+        font-family: var(--font-heading);
+        font-style: italic;
+        text-align: center;
+        color: #555;
+        line-height: 1.6;
+    }
+
+    .section-heading {
+        font-size: 1.5rem;
+        margin-bottom: 24px;
+        color: var(--dark);
+    }
+
+    .usp-list {
+        list-style: none;
+    }
+
+    .usp-list li {
+        padding: 14px 20px;
+        margin-bottom: 10px;
+        background: #fff;
+        border-radius: 8px;
+        font-size: 1rem;
+        color: #555;
+        border-left: 3px solid var(--accent);
+        line-height: 1.5;
+    }
+
+    .cta-text {
+        font-size: 1.4rem;
+        font-family: var(--font-heading);
+        margin-bottom: 24px;
+    }
+
+    @media (max-width: 750px) {
+        .page-title {
+            font-size: 1.8rem;
+        }
+    }
+</style>

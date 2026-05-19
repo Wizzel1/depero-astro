@@ -1,0 +1,220 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import CtaButton from "../../components/CtaButton.astro";
+---
+
+<BaseLayout
+    title="Business Analyse - effizienzsteigernd und kosteneinsparend"
+    description="Unsere Expertise in der IT Business Analyse hilft Ihnen, Prozesse zu optimieren und maßgeschneiderte Softwarelösungen zu entwickeln."
+>
+    <main>
+        <section
+            class="page-hero"
+            style="background: linear-gradient(300deg, #fefdcd, #a3e6ff)"
+        >
+            <div class="container">
+                <p class="breadcrumb">Home > Business Analyse</p>
+                <h1 class="page-title">
+                    Effizienzsteigerung und maßgeschneiderte Lösungen
+                </h1>
+                <p class="page-subtitle">
+                    Unsere Expertise in der IT Business Analyse
+                </p>
+            </div>
+        </section>
+
+        <section class="section-padding">
+            <div class="container content-width">
+                <h2 class="section-heading">
+                    Digitalisierungsstrategie in der Praxis
+                </h2>
+
+                <div class="step">
+                    <span class="step-num">1</span>
+                    <div>
+                        <h3 class="step-title">Kundenbedürfnisse verstehen</h3>
+                        <p>
+                            Enge Zusammenarbeit, Vision und Bedürfnisse klären.
+                            Wir nehmen uns Zeit, um Ihr Geschäft und Ihre Ziele
+                            wirklich zu verstehen.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <span class="step-num">2</span>
+                    <div>
+                        <h3 class="step-title">
+                            Prozessoptimierung in Ihrem Unternehmen
+                        </h3>
+                        <p>
+                            Analyse bestehender Geschäftsprozesse, Beseitigung
+                            von Ineffizienzen. Wir identifizieren Engpässe und
+                            schaffen optimierte Abläufe.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <span class="step-num">3</span>
+                    <div>
+                        <h3 class="step-title">
+                            Maßgeschneiderte Softwareentwicklung
+                        </h3>
+                        <p>
+                            Perfekt auf spezifische Anforderungen zugeschnitten.
+                            Jede Lösung ist ein Unikat, entwickelt für Ihre
+                            individuellen Bedürfnisse.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <span class="step-num">4</span>
+                    <div>
+                        <h3 class="step-title">Kontinuierliche Verbesserung</h3>
+                        <p>
+                            Überwachung und Anpassung im laufenden Betrieb. Wir
+                            bleiben auch nach der Auslieferung an Ihrer Seite.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-padding" style="background: var(--light-bg)">
+            <div class="container content-width">
+                <h2 class="section-heading">
+                    Vorteile der IT Business Analyse
+                </h2>
+                <ul class="benefits-list">
+                    <li>
+                        <strong>Effizienzsteigerung</strong> — Optimierte Prozesse
+                        sparen Zeit und Ressourcen
+                    </li>
+                    <li>
+                        <strong>Kosteneinsparungen</strong> — Reduzierung von Betriebskosten
+                        durch gezielte Digitalisierung
+                    </li>
+                    <li>
+                        <strong>Wettbewerbsvorteil</strong> — Bleiben Sie der Konkurrenz
+                        einen Schritt voraus
+                    </li>
+                    <li>
+                        <strong>Kundenzufriedenheit</strong> — Bessere Produkte und
+                        Dienstleistungen für Ihre Kunden
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="section-padding section-cta">
+            <div class="container" style="text-align: center">
+                <p class="cta-text">
+                    Nutzen Sie die Chancen der Digitalisierung. Kontaktieren Sie
+                    uns noch heute.
+                </p>
+                <CtaButton href="/kontakt/" label="Jetzt kontaktieren" />
+            </div>
+        </section>
+    </main>
+</BaseLayout>
+
+<style>
+    .page-hero {
+        padding: 140px 0 60px;
+        margin-top: 70px;
+    }
+
+    .breadcrumb {
+        font-size: 0.85rem;
+        color: #666;
+        margin-bottom: 16px;
+    }
+
+    .page-title {
+        font-size: 2.8rem;
+        font-weight: 700;
+        margin-bottom: 12px;
+    }
+
+    .page-subtitle {
+        font-size: 1.2rem;
+        color: #555;
+    }
+
+    .content-width {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .section-heading {
+        font-size: 1.5rem;
+        margin-bottom: 32px;
+        color: var(--dark);
+    }
+
+    .step {
+        display: flex;
+        gap: 20px;
+        margin-bottom: 28px;
+        align-items: flex-start;
+    }
+
+    .step-num {
+        flex-shrink: 0;
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        background: var(--accent);
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+        font-size: 1.1rem;
+    }
+
+    .step-title {
+        font-family: var(--font-heading);
+        font-size: 1.15rem;
+        margin-bottom: 6px;
+    }
+
+    .step p {
+        font-size: 1rem;
+        color: #555;
+        line-height: 1.6;
+    }
+
+    .benefits-list {
+        list-style: none;
+    }
+
+    .benefits-list li {
+        padding: 12px 0;
+        border-bottom: 1px solid var(--border);
+        font-size: 1rem;
+        color: #555;
+    }
+
+    .benefits-list li:last-child {
+        border-bottom: none;
+    }
+
+    .benefits-list strong {
+        color: var(--dark);
+    }
+
+    .cta-text {
+        font-size: 1.4rem;
+        font-family: var(--font-heading);
+        margin-bottom: 24px;
+    }
+
+    @media (max-width: 750px) {
+        .page-title {
+            font-size: 1.8rem;
+        }
+    }
+</style>
