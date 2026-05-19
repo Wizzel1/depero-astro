@@ -1,4 +1,7 @@
 ---
+import { Image } from "astro:assets";
+import logo from "../assets/depero-logo.png";
+
 const leistungen = [
     { href: "/leistungen/startups/", label: "Startups" },
     { href: "/leistungen/digitalisierung/", label: "Digitalisierung" },
@@ -7,35 +10,18 @@ const leistungen = [
     { href: "/leistungen/produktentwicklung/", label: "Produktentwicklung" },
     { href: "/leistungen/projektmanagement/", label: "Projektmanagement" },
 ];
+
+const services = [
+    { href: "/projekte/vysh-me/", label: "vysh.me" },
+    { href: "/projekte/stempeln-app/", label: "stempeln.app" },
+    { href: "/projekte/termin-app/", label: "termin.app" },
+];
 ---
 
 <header class="header">
     <div class="header-inner container">
         <a href="/" class="logo" aria-label="depero — zur Startseite">
-            <svg
-                width="140"
-                height="51"
-                viewBox="0 0 414 150"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-            >
-                <text
-                    x="0"
-                    y="120"
-                    font-family="var(--font-heading)"
-                    font-size="90"
-                    font-weight="bold"
-                    fill="var(--dark)">depero</text
-                >
-                <text
-                    x="0"
-                    y="145"
-                    font-family="var(--font-body)"
-                    font-size="14"
-                    fill="var(--dark)"
-                    letter-spacing="4">it macher.</text
-                >
-            </svg>
+            <Image src={logo} alt="depero Logo" width="142" height="51" />
         </a>
         <nav class="nav" aria-label="Hauptnavigation">
             <button
@@ -62,7 +48,15 @@ const leistungen = [
                 </li>
                 <li class="nav-item has-dropdown">
                     <a href="#">Services &amp; Projekte</a>
-                    <ul class="dropdown"></ul>
+                    <ul class="dropdown">
+                        {
+                            services.map((item) => (
+                                <li>
+                                    <a href={item.href}>{item.label}</a>
+                                </li>
+                            ))
+                        }
+                    </ul>
                 </li>
                 <li class="nav-item">
                     <a href="/technologien/">Technologien</a>
@@ -110,6 +104,7 @@ const leistungen = [
 
     .logo {
         flex-shrink: 0;
+        width: 451;
     }
 
     .nav-list {
