@@ -1,0 +1,107 @@
+<footer class="footer">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <svg
+                    width="200"
+                    height="73"
+                    viewBox="0 0 414 150"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                >
+                    <text
+                        x="0"
+                        y="120"
+                        font-family="Averia Serif Libre, serif"
+                        font-size="90"
+                        font-weight="bold"
+                        fill="#0c0c0c">depero</text
+                    >
+                    <text
+                        x="0"
+                        y="145"
+                        font-family="sans-serif"
+                        font-size="14"
+                        fill="#0c0c0c"
+                        letter-spacing="4">it macher.</text
+                    >
+                </svg>
+            </div>
+            <p class="footer-tagline">
+                Kreative Experten entwickeln mit Ihnen zusammen eine
+                Digitalisierungsstrategie für ihr Unternehmen. Neue Produkte,
+                individuelle Portale, Services, Dienstleistungen oder
+                Geschäftsmodelle sind unser Fachgebiet. Agile
+                Softwareentwickler. Erfahrene Projektmanager und
+                Geschäftsmodellexperten unterstützen Sie bei ihrem Vorhaben.
+            </p>
+            <nav class="footer-nav" aria-label="Footer Navigation">
+                <a href="/kontakt/">Kontakt</a>
+                <a href="/cookies/">Cookies</a>
+                <a href="/impressum/">Impressum</a>
+                <a href="/datenschutzerklaerung/">Datenschutzerklärung</a>
+            </nav>
+            <p class="footer-copyright">(c) Copyright depero</p>
+        </div>
+    </div>
+</footer>
+
+<style>
+    .footer {
+        background: var(--light-bg);
+        border-top: 1px solid var(--border);
+        padding: 60px 0 40px;
+    }
+
+    .footer-content {
+        text-align: center;
+        max-width: 700px;
+        margin: 0 auto;
+    }
+
+    .footer-logo {
+        margin-bottom: 24px;
+    }
+
+    .footer-tagline {
+        font-size: 0.95rem;
+        line-height: 1.7;
+        color: #555;
+        margin-bottom: 32px;
+    }
+
+    .footer-nav {
+        display: flex;
+        justify-content: center;
+        gap: 24px;
+        flex-wrap: wrap;
+        margin-bottom: 24px;
+    }
+
+    .footer-nav a {
+        font-size: 0.9rem;
+        color: var(--dark);
+        text-decoration: underline;
+        text-underline-offset: 3px;
+        transition: color 0.2s;
+    }
+
+    .footer-nav a:hover {
+        color: var(--accent);
+    }
+
+    .footer-copyright {
+        font-size: 0.85rem;
+        color: #888;
+    }
+
+    @media (max-width: 750px) {
+        .footer {
+            padding: 40px 0 30px;
+        }
+
+        .footer-nav {
+            gap: 16px;
+        }
+    }
+</style>

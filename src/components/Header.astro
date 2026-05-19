@@ -1,0 +1,247 @@
+---
+const leistungen = [
+    { href: "/leistungen/startups/", label: "Startups" },
+    { href: "/leistungen/digitalisierung/", label: "Digitalisierung" },
+    { href: "/leistungen/softwaredesign/", label: "Softwaredesign" },
+    { href: "/leistungen/business-analyse/", label: "Business Analyse" },
+    { href: "/leistungen/produktentwicklung/", label: "Produktentwicklung" },
+    { href: "/leistungen/projektmanagement/", label: "Projektmanagement" },
+];
+---
+
+<header class="header">
+    <div class="header-inner container">
+        <a href="/" class="logo" aria-label="depero — zur Startseite">
+            <svg
+                width="140"
+                height="51"
+                viewBox="0 0 414 150"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+            >
+                <text
+                    x="0"
+                    y="120"
+                    font-family="var(--font-heading)"
+                    font-size="90"
+                    font-weight="bold"
+                    fill="var(--dark)">depero</text
+                >
+                <text
+                    x="0"
+                    y="145"
+                    font-family="var(--font-body)"
+                    font-size="14"
+                    fill="var(--dark)"
+                    letter-spacing="4">it macher.</text
+                >
+            </svg>
+        </a>
+        <nav class="nav" aria-label="Hauptnavigation">
+            <button
+                class="nav-toggle"
+                aria-label="Menü öffnen/schließen"
+                data-nav-toggle
+            >
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-list">
+                <li class="nav-item has-dropdown">
+                    <a href="#">Leistungen</a>
+                    <ul class="dropdown">
+                        {
+                            leistungen.map((item) => (
+                                <li>
+                                    <a href={item.href}>{item.label}</a>
+                                </li>
+                            ))
+                        }
+                    </ul>
+                </li>
+                <li class="nav-item has-dropdown">
+                    <a href="#">Services &amp; Projekte</a>
+                    <ul class="dropdown"></ul>
+                </li>
+                <li class="nav-item">
+                    <a href="/technologien/">Technologien</a>
+                </li>
+                <li class="nav-item"><a href="/ueber-uns/">Über uns</a></li>
+                <li class="nav-item"><a href="/jobs/">Jobs</a></li>
+                <li class="nav-item">
+                    <a href="/kontakt/" class="nav-cta">Kontakt</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const toggle = document.querySelector("[data-nav-toggle]");
+        const nav = document.querySelector(".nav-list");
+        if (toggle && nav) {
+            toggle.addEventListener("click", () => {
+                nav.classList.toggle("open");
+                toggle.classList.toggle("open");
+            });
+        }
+    });
+</script>
+
+<style>
+    .header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        background: #fff;
+        border-bottom: 1px solid var(--border);
+    }
+
+    .header-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 70px;
+    }
+
+    .logo {
+        flex-shrink: 0;
+    }
+
+    .nav-list {
+        display: flex;
+        list-style: none;
+        gap: 4px;
+        align-items: center;
+    }
+
+    .nav-item a {
+        display: block;
+        padding: 8px 14px;
+        font-size: 0.9rem;
+        font-weight: 500;
+        color: var(--dark);
+        transition: color 0.2s;
+        white-space: nowrap;
+    }
+
+    .nav-item a:hover {
+        color: var(--accent);
+    }
+
+    .nav-item.has-dropdown {
+        position: relative;
+    }
+
+    .dropdown {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        min-width: 200px;
+        background: #fff;
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        padding: 8px 0;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        list-style: none;
+        z-index: 100;
+    }
+
+    .dropdown li a {
+        padding: 8px 16px;
+    }
+
+    .nav-item.has-dropdown:hover .dropdown,
+    .nav-item.has-dropdown:focus-within .dropdown {
+        display: block;
+    }
+
+    .nav-cta {
+        background: var(--dark);
+        color: #fff !important;
+        border-radius: 50px;
+        padding: 8px 20px !important;
+        transition: background 0.2s !important;
+    }
+
+    .nav-cta:hover {
+        background: var(--accent) !important;
+        color: #fff !important;
+    }
+
+    .nav-toggle {
+        display: none;
+        flex-direction: column;
+        gap: 5px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 4px;
+    }
+
+    .nav-toggle span {
+        display: block;
+        width: 24px;
+        height: 2px;
+        background: var(--dark);
+        transition: transform 0.2s;
+    }
+
+    .nav-toggle.open span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+    .nav-toggle.open span:nth-child(2) {
+        opacity: 0;
+    }
+    .nav-toggle.open span:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
+    }
+
+    @media (max-width: 970px) {
+        .nav-toggle {
+            display: flex;
+        }
+
+        .nav-list {
+            display: none;
+            position: absolute;
+            top: 70px;
+            left: 0;
+            right: 0;
+            background: #fff;
+            flex-direction: column;
+            padding: 20px;
+            border-bottom: 1px solid var(--border);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            gap: 0;
+        }
+
+        .nav-list.open {
+            display: flex;
+        }
+
+        .nav-item a {
+            padding: 12px 14px;
+        }
+
+        .dropdown {
+            position: static;
+            box-shadow: none;
+            border: none;
+            padding-left: 16px;
+        }
+
+        .nav-item.has-dropdown:hover .dropdown {
+            display: none;
+        }
+
+        .nav-item.has-dropdown.open .dropdown {
+            display: block;
+        }
+    }
+</style>
