@@ -1,4 +1,6 @@
 ---
+import { Image } from "astro:assets";
+import team from "../assets/depero-team.png";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Hero from "../components/Hero.astro";
 import CtaButton from "../components/CtaButton.astro";
@@ -128,122 +130,121 @@ const pageDesc =
         </section>
 
         <section class="section-padding section-why">
-            <div
-                class="why-bg"
-                <!-- style="background-image: url('https://www.depero.de/wp-content/uploads/background-image.jpg')" -->
-            >
-                <div class="container">
-                    <h2 class="section-title">
-                        Setzen Sie auf Ein Team aus kreativen Köpfen...
-                    </h2>
-                    <p class="why-text">
-                        Ein Team aus kreativen Köpfen, dass ihre Bedürfnisse
-                        aufnimmt, analysiert und zielgerichtet Lösungsvorschläge
-                        für Sie erarbeitet. Durch die Anwendung agiler
-                        Methodiken sind wir jederzeit in der Lage auf sich
-                        ändernde Bedürfnisse und Begebenheiten zu reagieren.
-                        Dabei setzen wir einen Fokus auf perfekte Umsetzung um
-                        die Zufriedenheit ihrer Zielgruppe und die Erfüllung
-                        ihrere Bedürfnisse zu maximieren.
-                    </p>
-                    <div class="why-cta">
-                        <CtaButton href="/kontakt/" label="KONTAKT" />
+            <div class="container">
+                <div class="why-grid">
+                    <Image src={team} alt="depero team" width={1024} />
+                    <div class="why-content">
+                        <h2 class="section-title">
+                            Setzen Sie auf Ein Team aus kreativen Köpfen...
+                        </h2>
+                        <p class="why-text">
+                            Ein Team aus kreativen Köpfen, dass ihre Bedürfnisse
+                            aufnimmt, analysiert und zielgerichtet
+                            Lösungsvorschläge für Sie erarbeitet. Durch die
+                            Anwendung agiler Methodiken sind wir jederzeit in
+                            der Lage auf sich ändernde Bedürfnisse und
+                            Begebenheiten zu reagieren. Dabei setzen wir einen
+                            Fokus auf perfekte Umsetzung um die Zufriedenheit
+                            ihrer Zielgruppe und die Erfüllung ihrere
+                            Bedürfnisse zu maximieren.
+                        </p>
+                        <div class="why-cta">
+                            <CtaButton href="/kontakt/" label="KONTAKT" />
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="section-padding section-warum">
+        <section class="section-padding section-warum-skills">
             <div class="container">
-                <h2 class="section-title">Warum sollten Sie uns wählen?</h2>
-                <div class="warum-grid">
-                    <div class="warum-card">
-                        <h3 class="warum-card-title">Expertise</h3>
-                        <p class="warum-card-desc">
-                            Langjährige Projekte im Konzernumfeld u.a. im
-                            Banken-, Leasing- und Versicherungsbereich.
-                        </p>
-                    </div>
-                    <div class="warum-card">
-                        <h3 class="warum-card-title">Fokus</h3>
-                        <p class="warum-card-desc">
-                            Wir setzen den Fokus auf perfekte Umsetzung um die
-                            Zufriedenheit ihrer Zielgruppe und die Erfüllung
-                            ihrer Bedürfnisse zu maximieren. Dies erreichen wir
-                            u.a. durch Business Analyse, Analyse von
-                            Bestandssystemen, Ressourcenplanung,
-                            Softwarearchitektur, Softwareentwicklung, Agile
-                            Methodiken (z.B. Scrum, Kanban) und
-                            Projektmanagement.
-                        </p>
-                    </div>
-                    <div class="warum-card">
-                        <h3 class="warum-card-title">History</h3>
-                        <p class="warum-card-desc">
-                            depero ist ein Zusammenschluss von mehreren
-                            Consultants und Entwicklern die mit Herz und Seele
-                            im Bereich Digitalisierung tätig sind. Dabei greift
-                            depero auf Erfahrungen aus über 20 Jahren zurück.
-                            Wir haben schon "digitalisiert" als das Wort noch
-                            gar nicht dafür verwendet wurde.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section
-            class="section-padding section-skills"
-            style="background: var(--light-bg)"
-        >
-            <div class="container">
-                <h2 class="section-title">Unsere Kompetenzen</h2>
-                <div class="skills-list">
-                    <div class="skill-item">
-                        <div class="skill-label">Business Analyse</div>
-                        <div class="skill-bar">
-                            <div class="skill-fill" style="width:97%">
-                                <span>97%</span>
-                            </div>
+                <h2 class="section-title section-title-sm">
+                    Warum sollten Sie uns wählen?
+                </h2>
+                <div class="warum-skills-grid">
+                    <div class="warum-col">
+                        <div class="warum-card">
+                            <h3 class="warum-card-title">Expertise</h3>
+                            <p class="warum-card-desc">
+                                Langjährige Projekte im Konzernumfeld u.a. im
+                                Banken-, Leasing- und Versicherungsbereich.
+                            </p>
+                        </div>
+                        <div class="warum-card">
+                            <h3 class="warum-card-title">Fokus</h3>
+                            <p class="warum-card-desc">
+                                Wir setzen den Fokus auf perfekte Umsetzung um
+                                die Zufriedenheit ihrer Zielgruppe und die
+                                Erfüllung ihrer Bedürfnisse zu maximieren. Dies
+                                erreichen wir u.a. durch Business Analyse,
+                                Analyse von Bestandssystemen, Ressourcenplanung,
+                                Softwarearchitektur, Softwareentwicklung, Agile
+                                Methodiken (z.B. Scrum, Kanban) und
+                                Projektmanagement.
+                            </p>
+                        </div>
+                        <div class="warum-card">
+                            <h3 class="warum-card-title">History</h3>
+                            <p class="warum-card-desc">
+                                depero ist ein Zusammenschluss von mehreren
+                                Consultants und Entwicklern die mit Herz und
+                                Seele im Bereich Digitalisierung tätig sind.
+                                Dabei greift depero auf Erfahrungen aus über 20
+                                Jahren zurück. Wir haben schon "digitalisiert"
+                                als das Wort noch gar nicht dafür verwendet
+                                wurde.
+                            </p>
                         </div>
                     </div>
-                    <div class="skill-item">
-                        <div class="skill-label">Softwaredesign</div>
-                        <div class="skill-bar">
-                            <div class="skill-fill" style="width:97%">
-                                <span>97%</span>
+                    <div class="warum-col">
+                        <div class="skills-list">
+                            <div class="skill-item">
+                                <div class="skill-label">Business Analyse</div>
+                                <div class="skill-bar">
+                                    <div class="skill-fill" style="width:97%">
+                                        <span>97%</span>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-label">Projektmanagement</div>
-                        <div class="skill-bar">
-                            <div class="skill-fill" style="width:95%">
-                                <span>95%</span>
+                            <div class="skill-item">
+                                <div class="skill-label">Softwaredesign</div>
+                                <div class="skill-bar">
+                                    <div class="skill-fill" style="width:97%">
+                                        <span>97%</span>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-label">Agile Methoden</div>
-                        <div class="skill-bar">
-                            <div class="skill-fill" style="width:91%">
-                                <span>91%</span>
+                            <div class="skill-item">
+                                <div class="skill-label">Projektmanagement</div>
+                                <div class="skill-bar">
+                                    <div class="skill-fill" style="width:95%">
+                                        <span>95%</span>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-label">Kreativität</div>
-                        <div class="skill-bar">
-                            <div class="skill-fill" style="width:100%">
-                                <span>100%</span>
+                            <div class="skill-item">
+                                <div class="skill-label">Agile Methoden</div>
+                                <div class="skill-bar">
+                                    <div class="skill-fill" style="width:91%">
+                                        <span>91%</span>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-label">Herz &amp; Seele</div>
-                        <div class="skill-bar">
-                            <div class="skill-fill" style="width:100%">
-                                <span>100%</span>
+                            <div class="skill-item">
+                                <div class="skill-label">Kreativität</div>
+                                <div class="skill-bar">
+                                    <div class="skill-fill" style="width:100%">
+                                        <span>100%</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-label">Herz &amp; Seele</div>
+                                <div class="skill-bar">
+                                    <div class="skill-fill" style="width:100%">
+                                        <span>100%</span>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -469,73 +470,73 @@ const pageDesc =
     }
 
     .section-why {
-        padding: 0;
+        background: #fff;
     }
 
-    .why-bg {
-        background-size: cover;
-        background-position: center;
-        background-attachment: fixed;
-        padding: 100px 0;
-        position: relative;
+    .why-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 60px;
+        align-items: center;
     }
 
-    .why-bg::before {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background: rgba(255, 255, 255, 0.85);
+    .why-content {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
     }
 
-    .why-bg .container {
-        position: relative;
-        z-index: 1;
-        text-align: center;
+    .why-content .section-title {
+        text-align: left;
     }
 
     .why-text {
         font-size: 1.1rem;
         line-height: 1.8;
         color: #444;
-        max-width: 800px;
-        margin: 0 auto 40px;
+        margin-bottom: 40px;
     }
 
-    .section-warum {
+    .section-warum-skills {
         background: #fff;
     }
 
-    .warum-grid {
+    .section-warum-skills .section-title-sm {
+        margin-bottom: 40px;
+    }
+
+    .warum-skills-grid {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 40px;
+        grid-template-columns: 1fr 1fr;
+        gap: 60px;
+    }
+
+    .warum-col {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
     }
 
     .warum-card {
-        padding: 30px;
-        border: 1px solid var(--border);
-        border-radius: 12px;
+        padding: 12px 0;
     }
 
     .warum-card-title {
         font-family: var(--font-heading);
-        font-size: 1.3rem;
-        margin-bottom: 16px;
+        font-size: 1.1rem;
+        margin-bottom: 6px;
         color: var(--accent);
     }
 
     .warum-card-desc {
-        font-size: 0.95rem;
-        color: #555;
-        line-height: 1.7;
+        font-size: 0.9rem;
+        line-height: 1.6;
     }
 
     .skills-list {
-        max-width: 700px;
-        margin: 0 auto;
         display: flex;
         flex-direction: column;
-        gap: 24px;
+        gap: 28px;
     }
 
     .skill-item {
@@ -546,13 +547,14 @@ const pageDesc =
 
     .skill-label {
         font-weight: 600;
-        min-width: 180px;
         font-size: 0.95rem;
+        width: 160px;
+        flex-shrink: 0;
     }
 
     .skill-bar {
         flex: 1;
-        height: 26px;
+        height: 30px;
         background: var(--border);
         border-radius: 50px;
         overflow: hidden;
@@ -577,9 +579,14 @@ const pageDesc =
 
     @media (max-width: 970px) {
         .icon-grid-3,
-        .icon-grid-6,
-        .warum-grid {
+        .icon-grid-6 {
             grid-template-columns: repeat(2, 1fr);
+        }
+
+        .why-grid,
+        .warum-skills-grid {
+            grid-template-columns: 1fr;
+            gap: 40px;
         }
 
         .section-title {
@@ -590,14 +597,8 @@ const pageDesc =
 
     @media (max-width: 750px) {
         .icon-grid-3,
-        .icon-grid-6,
-        .warum-grid {
+        .icon-grid-6 {
             grid-template-columns: 1fr;
-        }
-
-        .why-bg {
-            padding: 60px 0;
-            background-attachment: scroll;
         }
 
         .why-text {
