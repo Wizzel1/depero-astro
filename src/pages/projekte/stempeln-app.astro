@@ -1,0 +1,197 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import CtaButton from "../../components/CtaButton.astro";
+---
+
+<BaseLayout
+    title="stempeln.app - depero"
+    description="Schluss mit Zettelwirtschaft: Digitale Zeiterfassung für kleine Unternehmen. Moderne SaaS-Plattform stempeln.app von depero."
+>
+    <main>
+        <section
+            class="page-hero"
+            style="background: linear-gradient(300deg, #fcdabd, #cbdef4)"
+        >
+            <div class="container">
+                <p class="breadcrumb">Home > stempeln.app</p>
+                <h1 class="page-title">
+                    Schluss mit Zettelwirtschaft: Warum kleine Unternehmen von
+                    digitaler Zeiterfassung profitieren
+                </h1>
+            </div>
+        </section>
+
+        <section class="section-padding">
+            <div class="container content-width">
+                <h2 class="section-heading">
+                    Digitale Zeiterfassung – stempeln.app
+                </h2>
+                <p class="intro-text">
+                    Moderne SaaS-Plattform zur digitalen Zeiterfassung für
+                    kleine Unternehmen.
+                </p>
+            </div>
+        </section>
+
+        <section class="section-padding" style="background: var(--light-bg)">
+            <div class="container content-width">
+                <h2 class="section-heading">
+                    Die typischen Herausforderungen:
+                </h2>
+                <ul class="challenge-list">
+                    <li>
+                        <strong>Hoher Verwaltungsaufwand</strong>
+                        <span
+                            >Manuelle Prozesse kosten wertvolle Zeit und
+                            Ressourcen.</span
+                        >
+                    </li>
+                    <li>
+                        <strong>Fehlerquellen durch manuelle Eingabe</strong>
+                        <span
+                            >Übertragungsfehler und Nachlässigkeiten führen zu
+                            Ungenauigkeiten.</span
+                        >
+                    </li>
+                    <li>
+                        <strong>Keine Echtzeit-Übersicht</strong>
+                        <span
+                            >Fehlende Transparenz über aktuelle Anwesenheiten
+                            und Auslastungen.</span
+                        >
+                    </li>
+                    <li>
+                        <strong>Datenschutzrisiken</strong>
+                        <span
+                            >Papierbasierte Aufzeichnungen bieten unzureichenden
+                            Datenschutz.</span
+                        >
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="section-padding">
+            <div class="container content-width">
+                <h2 class="section-heading">
+                    Unsere Lösung: Einfach. Digital. Effizient.
+                </h2>
+                <div class="solution-card">
+                    <p>
+                        Intuitive Erfassung von Arbeitszeiten, Urlaubsanträgen
+                        und Abwesenheiten.
+                    </p>
+                    <p>
+                        Die Entwicklung ist weit fortgeschritten, erste Module
+                        befinden sich bereits im Test.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section
+            class="section-padding section-cta"
+            style="background: var(--light-bg)"
+        >
+            <div class="container" style="text-align: center">
+                <p class="cta-text">
+                    Jetzt vormerken und Teil der digitalen
+                    Zeiterfassungsrevolution werden!
+                </p>
+                <CtaButton href="/kontakt/" label="Jetzt vormerken" />
+            </div>
+        </section>
+    </main>
+</BaseLayout>
+
+<style>
+    .page-hero {
+        padding: 140px 0 60px;
+        margin-top: 70px;
+    }
+
+    .breadcrumb {
+        font-size: 0.85rem;
+        color: #666;
+        margin-bottom: 16px;
+    }
+
+    .page-title {
+        font-size: 2.4rem;
+        font-weight: 700;
+        margin-bottom: 12px;
+        max-width: 900px;
+    }
+
+    .content-width {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .intro-text {
+        font-size: 1.15rem;
+        line-height: 1.8;
+        color: #444;
+    }
+
+    .section-heading {
+        font-size: 1.5rem;
+        margin-bottom: 24px;
+        color: var(--dark);
+    }
+
+    .challenge-list {
+        list-style: none;
+    }
+
+    .challenge-list li {
+        padding: 16px 20px;
+        margin-bottom: 12px;
+        background: #fff;
+        border-radius: 8px;
+        border-left: 3px solid var(--accent);
+    }
+
+    .challenge-list strong {
+        display: block;
+        font-size: 1.05rem;
+        color: var(--dark);
+        margin-bottom: 4px;
+    }
+
+    .challenge-list span {
+        font-size: 0.95rem;
+        color: #555;
+        line-height: 1.5;
+    }
+
+    .solution-card {
+        padding: 28px;
+        background: var(--light-bg);
+        border-radius: 12px;
+        border: 1px solid var(--border);
+    }
+
+    .solution-card p {
+        font-size: 1.05rem;
+        line-height: 1.7;
+        color: #555;
+        margin-bottom: 12px;
+    }
+
+    .solution-card p:last-child {
+        margin-bottom: 0;
+    }
+
+    .cta-text {
+        font-size: 1.4rem;
+        font-family: var(--font-heading);
+        margin-bottom: 24px;
+    }
+
+    @media (max-width: 750px) {
+        .page-title {
+            font-size: 1.6rem;
+        }
+    }
+</style>

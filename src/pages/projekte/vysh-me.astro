@@ -1,0 +1,244 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import CtaButton from "../../components/CtaButton.astro";
+---
+
+<BaseLayout
+    title="vysh.me – Wunschlisten-App von depero GmbH"
+    description="vysh.me: Moderne Wunschlisten-App. Wünsche aus beliebigen Online-Shops speichern und teilen. Browser oder App (iOS/Android)."
+>
+    <main>
+        <section
+            class="page-hero"
+            style="background: linear-gradient(300deg, #fefdcd, #a3e6ff)"
+        >
+            <div class="container">
+                <p class="breadcrumb">Home > vysh.me</p>
+                <h1 class="page-title">vysh.me – Wünsche einfach teilen.</h1>
+                <p class="page-subtitle">Eine App von depero.</p>
+            </div>
+        </section>
+
+        <section class="section-padding">
+            <div class="container content-width">
+                <blockquote class="quote">
+                    "Schenken kann kompliziert sein – Wünsche teilen nicht."
+                </blockquote>
+                <p class="intro-text">
+                    vysh.me: Moderne Wunschlisten-App – Browser oder App
+                    (iOS/Android). Wünsche aus beliebigen Online-Shops speichern
+                    und teilen.
+                </p>
+            </div>
+        </section>
+
+        <section class="section-padding" style="background: var(--light-bg)">
+            <div class="container content-width">
+                <h2 class="section-heading">Die Idee: Schenken ohne Stress</h2>
+                <ul class="feature-list">
+                    <li>
+                        Wünsche zentral sammeln, teilen und gemeinsam planen
+                    </li>
+                    <li>Ein Link genügt</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="section-padding">
+            <div class="container content-width">
+                <h2 class="section-heading">Nutzerzentriertes Design</h2>
+                <ul class="feature-list">
+                    <li>
+                        Wünsche aus jedem Online-Shop mit nur einem Klick
+                        speichern
+                    </li>
+                    <li>
+                        Persönliche, gemeinsame oder öffentliche Wunschlisten
+                    </li>
+                    <li>
+                        Doppelte Geschenke vermeiden durch smarte
+                        Reservierungsfunktion
+                    </li>
+                    <li>Synchronisation zwischen App und Weboberfläche</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="section-padding" style="background: var(--light-bg)">
+            <div class="container content-width">
+                <h2 class="section-heading">
+                    Von der Idee zum marktreifen Produkt
+                </h2>
+                <p>
+                    Agiles Projektmanagement + kontinuierliches Nutzerfeedback
+                    haben aus einer einfachen Idee eine erfolgreiche App
+                    gemacht.
+                </p>
+            </div>
+        </section>
+
+        <section class="section-padding">
+            <div class="container content-width">
+                <h2 class="section-heading">Technologie & Umsetzung</h2>
+                <div class="tech-grid">
+                    <div class="tech-card">
+                        <strong>Frontend</strong>
+                        <span>React & React Native</span>
+                    </div>
+                    <div class="tech-card">
+                        <strong>Backend</strong>
+                        <span>Spring, Microservices, NodeJS</span>
+                    </div>
+                    <div class="tech-card">
+                        <strong>Design</strong>
+                        <span>Mobile-first</span>
+                    </div>
+                    <div class="tech-card">
+                        <strong>Deployment</strong>
+                        <span>CI/CD-Pipeline</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section
+            class="section-padding section-cta"
+            style="background: var(--light-bg)"
+        >
+            <div class="container" style="text-align: center">
+                <p class="cta-text">
+                    Klicke hier um durchzustarten und bringe deine Idee mit
+                    depero auf die nächste Stufe!
+                </p>
+                <CtaButton href="/kontakt/" label="Jetzt durchstarten" />
+            </div>
+        </section>
+    </main>
+</BaseLayout>
+
+<style>
+    .page-hero {
+        padding: 140px 0 60px;
+        margin-top: 70px;
+    }
+
+    .breadcrumb {
+        font-size: 0.85rem;
+        color: #666;
+        margin-bottom: 16px;
+    }
+
+    .page-title {
+        font-size: 2.8rem;
+        font-weight: 700;
+        margin-bottom: 12px;
+    }
+
+    .page-subtitle {
+        font-size: 1.2rem;
+        color: #555;
+    }
+
+    .content-width {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .quote {
+        font-size: 1.3rem;
+        font-family: var(--font-heading);
+        font-style: italic;
+        color: #555;
+        border-left: 4px solid var(--accent);
+        padding: 20px 24px;
+        margin: 0 0 24px;
+        line-height: 1.6;
+    }
+
+    .intro-text {
+        font-size: 1.15rem;
+        line-height: 1.8;
+        color: #444;
+    }
+
+    .section-heading {
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+        color: var(--dark);
+    }
+
+    .feature-list {
+        list-style: none;
+    }
+
+    .feature-list li {
+        padding: 12px 0 12px 28px;
+        position: relative;
+        font-size: 1rem;
+        color: #555;
+        line-height: 1.6;
+        border-bottom: 1px solid var(--border);
+    }
+
+    .feature-list li::before {
+        content: "✓";
+        position: absolute;
+        left: 0;
+        color: var(--accent);
+        font-weight: 700;
+    }
+
+    .feature-list li:last-child {
+        border-bottom: none;
+    }
+
+    .content-width p {
+        font-size: 1rem;
+        line-height: 1.7;
+        color: #555;
+    }
+
+    .tech-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+        margin-top: 20px;
+    }
+
+    .tech-card {
+        padding: 20px;
+        background: var(--light-bg);
+        border-radius: 8px;
+        border-left: 3px solid var(--accent);
+    }
+
+    .tech-card strong {
+        display: block;
+        font-size: 0.85rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: var(--accent);
+        margin-bottom: 4px;
+    }
+
+    .tech-card span {
+        font-size: 1rem;
+        color: #555;
+    }
+
+    .cta-text {
+        font-size: 1.4rem;
+        font-family: var(--font-heading);
+        margin-bottom: 24px;
+    }
+
+    @media (max-width: 750px) {
+        .page-title {
+            font-size: 1.8rem;
+        }
+
+        .tech-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>

@@ -1,0 +1,94 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+    title="termin.app - depero"
+    description="termin.app - Terminmanagement von depero. Coming soon."
+>
+    <main>
+        <section
+            class="page-hero"
+            style="background: linear-gradient(300deg, #c5daf9, #dbffea)"
+        >
+            <div class="container">
+                <p class="breadcrumb">Home > termin.app</p>
+                <h1 class="page-title">termin.app</h1>
+                <p class="page-subtitle">Eine App von depero.</p>
+            </div>
+        </section>
+
+        <section class="section-padding">
+            <div class="container" style="text-align: center">
+                <div class="coming-soon">
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="64"
+                        height="64"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                    >
+                        <circle cx="12" cy="12" r="10"></circle><polyline
+                            points="12 6 12 12 16 14"></polyline>
+                    </svg>
+                    <h2 class="coming-soon-title">Coming Soon</h2>
+                    <p class="coming-soon-text">
+                        Wir arbeiten daran. Bald erfahren Sie hier mehr über
+                        termin.app – Ihre moderne Lösung für Terminmanagement.
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+</BaseLayout>
+
+<style>
+    .page-hero {
+        padding: 140px 0 60px;
+        margin-top: 70px;
+    }
+
+    .breadcrumb {
+        font-size: 0.85rem;
+        color: #666;
+        margin-bottom: 16px;
+    }
+
+    .page-title {
+        font-size: 2.8rem;
+        font-weight: 700;
+        margin-bottom: 12px;
+    }
+
+    .page-subtitle {
+        font-size: 1.2rem;
+        color: #555;
+    }
+
+    .coming-soon {
+        padding: 80px 20px;
+        max-width: 500px;
+        margin: 0 auto;
+    }
+
+    .coming-soon svg {
+        color: var(--accent);
+        margin-bottom: 24px;
+    }
+
+    .coming-soon-title {
+        font-size: 2rem;
+        font-family: var(--font-heading);
+        margin-bottom: 16px;
+    }
+
+    .coming-soon-text {
+        font-size: 1.1rem;
+        color: #555;
+        line-height: 1.7;
+    }
+</style>
