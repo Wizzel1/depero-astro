@@ -1,11 +1,619 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Footer from "../components/Footer.astro";
+import Hero from "../components/Hero.astro";
+import CtaButton from "../components/CtaButton.astro";
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+const pageTitle = "Individualsoftware aus NRW - Die it-macher von depero";
+const pageDesc =
+    "Kreative Experten entwickeln mit Ihnen zusammen eine Individualsoftware für ihr Unternehmen. Ihre digitale Zukunft beginnt jetzt.";
 ---
 
-<Layout>
-	<Welcome />
-</Layout>
+<BaseLayout title={pageTitle} description={pageDesc}>
+    <script
+        slot="head"
+        type="application/ld+json"
+        set:html={JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            name: "depero – it macher",
+            url: "https://www.depero.de/",
+            logo: "https://www.depero.de/wp-content/uploads/logo.png",
+            description: pageDesc,
+            address: {
+                "@type": "PostalAddress",
+                streetAddress: "Pfarrer-Pohl-Weg 4",
+                postalCode: "48599",
+                addressLocality: "Gronau",
+                addressCountry: "DE",
+            },
+            contactPoint: {
+                "@type": "ContactPoint",
+                telephone: "+49-2565-9199120",
+                email: "info@depero.de",
+                contactType: "customer service",
+            },
+            sameAs: [],
+        })}
+    />
+    <main>
+        <Hero />
+
+        <section
+            class="section-padding section-icons-3"
+            style="background: #f9f9f9"
+        >
+            <div class="container">
+                <div class="icon-grid-3">
+                    <div class="icon-card">
+                        <div class="icon-img">
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="48"
+                                height="48"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="1.5"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                ><path
+                                    d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"
+                                ></path><circle cx="9" cy="7" r="4"
+                                ></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"
+                                ></path><path d="M16 3.13a4 4 0 0 1 0 7.75"
+                                ></path></svg
+                            >
+                        </div>
+                        <h3 class="icon-card-title">Business Analyse</h3>
+                        <p class="icon-card-desc">
+                            Analyse ihrer Prozesse und Bewertung des
+                            Optimierungspotenzials durch Digitalisierung.
+                        </p>
+                    </div>
+                    <div class="icon-card">
+                        <div class="icon-img">
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="48"
+                                height="48"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="1.5"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                ><path
+                                    d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
+                                ></path><polyline points="14 2 14 8 20 8"
+                                ></polyline><line x1="16" y1="13" x2="8" y2="13"
+                                ></line><line x1="16" y1="17" x2="8" y2="17"
+                                ></line><polyline points="10 9 9 9 8 9"
+                                ></polyline></svg
+                            >
+                        </div>
+                        <h3 class="icon-card-title">Transformation</h3>
+                        <p class="icon-card-desc">
+                            Digitale Transformation analoger Daten und Prozesse
+                            zur Steigerung der Effizienz und dem Zufriedensein
+                            ihrer Kunden.
+                        </p>
+                    </div>
+                    <div class="icon-card">
+                        <div class="icon-img">
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="48"
+                                height="48"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="1.5"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                ><path
+                                    d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"
+                                ></path><circle cx="12" cy="12" r="3"
+                                ></circle></svg
+                            >
+                        </div>
+                        <h3 class="icon-card-title">Unterstützung</h3>
+                        <p class="icon-card-desc">
+                            Begleitung der neuen digitalen Prozesse durch
+                            Beratung und Unterstützung auf Augenhöhe, um dem
+                            stetigen digitalen Wandel gerecht zu werden.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-padding section-why">
+            <div
+                class="why-bg"
+                style="background-image: url('https://www.depero.de/wp-content/uploads/background-image.jpg')"
+            >
+                <div class="container">
+                    <h2 class="section-title">
+                        Setzen Sie auf Ein Team aus kreativen Köpfen...
+                    </h2>
+                    <p class="why-text">
+                        Ein Team aus kreativen Köpfen, dass ihre Bedürfnisse
+                        aufnimmt, analysiert und zielgerichtet Lösungsvorschläge
+                        für Sie erarbeitet. Durch die Anwendung agiler
+                        Methodiken sind wir jederzeit in der Lage auf sich
+                        ändernde Bedürfnisse und Begebenheiten zu reagieren.
+                        Dabei setzen wir einen Fokus auf perfekte Umsetzung um
+                        die Zufriedenheit ihrer Zielgruppe und die Erfüllung
+                        ihrere Bedürfnisse zu maximieren.
+                    </p>
+                    <div class="why-cta">
+                        <CtaButton href="/kontakt/" label="KONTAKT" />
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-padding section-warum">
+            <div class="container">
+                <h2 class="section-title">Warum sollten Sie uns wählen?</h2>
+                <div class="warum-grid">
+                    <div class="warum-card">
+                        <h3 class="warum-card-title">Expertise</h3>
+                        <p class="warum-card-desc">
+                            Langjährige Projekte im Konzernumfeld u.a. im
+                            Banken-, Leasing- und Versicherungsbereich.
+                        </p>
+                    </div>
+                    <div class="warum-card">
+                        <h3 class="warum-card-title">Fokus</h3>
+                        <p class="warum-card-desc">
+                            Wir setzen den Fokus auf perfekte Umsetzung um die
+                            Zufriedenheit ihrer Zielgruppe und die Erfüllung
+                            ihrer Bedürfnisse zu maximieren. Dies erreichen wir
+                            u.a. durch Business Analyse, Analyse von
+                            Bestandssystemen, Ressourcenplanung,
+                            Softwarearchitektur, Softwareentwicklung, Agile
+                            Methodiken (z.B. Scrum, Kanban) und
+                            Projektmanagement.
+                        </p>
+                    </div>
+                    <div class="warum-card">
+                        <h3 class="warum-card-title">History</h3>
+                        <p class="warum-card-desc">
+                            depero ist ein Zusammenschluss von mehreren
+                            Consultants und Entwicklern die mit Herz und Seele
+                            im Bereich Digitalisierung tätig sind. Dabei greift
+                            depero auf Erfahrungen aus über 20 Jahren zurück.
+                            Wir haben schon "digitalisiert" als das Wort noch
+                            gar nicht dafür verwendet wurde.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section
+            class="section-padding section-skills"
+            style="background: var(--light-bg)"
+        >
+            <div class="container">
+                <h2 class="section-title">Unsere Kompetenzen</h2>
+                <div class="skills-list">
+                    <div class="skill-item">
+                        <div class="skill-label">Business Analyse</div>
+                        <div class="skill-bar">
+                            <div class="skill-fill" style="width:97%">
+                                <span>97%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-label">Softwaredesign</div>
+                        <div class="skill-bar">
+                            <div class="skill-fill" style="width:97%">
+                                <span>97%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-label">Projektmanagement</div>
+                        <div class="skill-bar">
+                            <div class="skill-fill" style="width:95%">
+                                <span>95%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-label">Agile Methoden</div>
+                        <div class="skill-bar">
+                            <div class="skill-fill" style="width:91%">
+                                <span>91%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-label">Kreativität</div>
+                        <div class="skill-bar">
+                            <div class="skill-fill" style="width:100%">
+                                <span>100%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-label">Herz &amp; Seele</div>
+                        <div class="skill-bar">
+                            <div class="skill-fill" style="width:100%">
+                                <span>100%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section
+            class="section-padding section-icons-6"
+            style="background: #f9f9f9"
+        >
+            <div class="container">
+                <div class="icon-grid-6">
+                    <div class="icon-card">
+                        <div class="icon-img">
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="48"
+                                height="48"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="1.5"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                ><path
+                                    d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"
+                                ></path></svg
+                            >
+                        </div>
+                        <h3 class="icon-card-title">Vorreiter</h3>
+                        <p class="icon-card-desc">
+                            Mit uns jagen Sie der Digitalisierung nicht
+                            hinterher, Sie werden zu Vorreitern in der digitalen
+                            Welt...
+                        </p>
+                    </div>
+                    <div class="icon-card">
+                        <div class="icon-img">
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="48"
+                                height="48"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="1.5"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                ><polyline points="23 4 23 10 17 10"
+                                ></polyline><polyline points="1 20 1 14 7 14"
+                                ></polyline><path
+                                    d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"
+                                ></path></svg
+                            >
+                        </div>
+                        <h3 class="icon-card-title">Anpassung</h3>
+                        <p class="icon-card-desc">
+                            Neuentwicklung, Anpassung oder Umstellung. Es muss
+                            nicht immer ein zeitaufwendiges Projekt auf der
+                            grünen Wiese sein...
+                        </p>
+                    </div>
+                    <div class="icon-card">
+                        <div class="icon-img">
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="48"
+                                height="48"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="1.5"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                ><circle cx="12" cy="12" r="10"
+                                ></circle><polyline points="12 6 12 12 16 14"
+                                ></polyline></svg
+                            >
+                        </div>
+                        <h3 class="icon-card-title">Realisierung</h3>
+                        <p class="icon-card-desc">
+                            Wir unterstützen Sie bei der Realisierung Ihrer
+                            Ideen. Von der Konzeption, über den Entwurf, bis hin
+                            zur Umsetzung und Inbetriebnahme.
+                        </p>
+                    </div>
+                    <div class="icon-card">
+                        <div class="icon-img">
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="48"
+                                height="48"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="1.5"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                ><path
+                                    d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"
+                                ></path></svg
+                            >
+                        </div>
+                        <h3 class="icon-card-title">Vertrauen</h3>
+                        <p class="icon-card-desc">
+                            Gute Zusammenarbeit erfordert vor allem Vertrauen
+                            und Offenheit...
+                        </p>
+                    </div>
+                    <div class="icon-card">
+                        <div class="icon-img">
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="48"
+                                height="48"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="1.5"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                ><line x1="4" y1="21" x2="4" y2="14"
+                                ></line><line x1="4" y1="10" x2="4" y2="3"
+                                ></line><line x1="12" y1="21" x2="12" y2="12"
+                                ></line><line x1="12" y1="8" x2="12" y2="3"
+                                ></line><line x1="20" y1="21" x2="20" y2="16"
+                                ></line><line x1="20" y1="12" x2="20" y2="3"
+                                ></line><line x1="1" y1="14" x2="7" y2="14"
+                                ></line><line x1="9" y1="8" x2="15" y2="8"
+                                ></line><line x1="17" y1="16" x2="23" y2="16"
+                                ></line></svg
+                            >
+                        </div>
+                        <h3 class="icon-card-title">Problemlöser</h3>
+                        <p class="icon-card-desc">
+                            Wir sind Problemlöser. Als IT Unternehmen sind wir
+                            für Sie da um Probleme zu lösen.
+                        </p>
+                    </div>
+                    <div class="icon-card">
+                        <div class="icon-img">
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="48"
+                                height="48"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="1.5"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                ><circle cx="12" cy="12" r="3"></circle><path
+                                    d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"
+                                ></path></svg
+                            >
+                        </div>
+                        <h3 class="icon-card-title">Kompetenz</h3>
+                        <p class="icon-card-desc">
+                            Unsere Teammitglieder sind mittlerweile seit
+                            mehreren Jahrzehnten Teil der IT Industrie...
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <Footer />
+</BaseLayout>
+
+<style>
+    .section-icons-3,
+    .section-icons-6 {
+        background: var(--light-bg);
+    }
+
+    .section-title {
+        font-size: 2rem;
+        text-align: center;
+        margin-bottom: 50px;
+        color: var(--dark);
+    }
+
+    .icon-grid-3 {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 40px;
+    }
+
+    .icon-grid-6 {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 40px;
+    }
+
+    .icon-card {
+        text-align: center;
+        padding: 30px 20px;
+    }
+
+    .icon-img {
+        width: 70px;
+        height: 70px;
+        margin: 0 auto 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .icon-img :global(svg) {
+        color: var(--accent);
+    }
+
+    .icon-card-title {
+        font-family: var(--font-heading);
+        font-size: 1.2rem;
+        margin-bottom: 12px;
+    }
+
+    .icon-card-desc {
+        font-size: 0.95rem;
+        color: #555;
+        line-height: 1.6;
+    }
+
+    .section-why {
+        padding: 0;
+    }
+
+    .why-bg {
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        padding: 100px 0;
+        position: relative;
+    }
+
+    .why-bg::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: rgba(255, 255, 255, 0.85);
+    }
+
+    .why-bg .container {
+        position: relative;
+        z-index: 1;
+        text-align: center;
+    }
+
+    .why-text {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        color: #444;
+        max-width: 800px;
+        margin: 0 auto 40px;
+    }
+
+    .section-warum {
+        background: #fff;
+    }
+
+    .warum-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 40px;
+    }
+
+    .warum-card {
+        padding: 30px;
+        border: 1px solid var(--border);
+        border-radius: 12px;
+    }
+
+    .warum-card-title {
+        font-family: var(--font-heading);
+        font-size: 1.3rem;
+        margin-bottom: 16px;
+        color: var(--accent);
+    }
+
+    .warum-card-desc {
+        font-size: 0.95rem;
+        color: #555;
+        line-height: 1.7;
+    }
+
+    .skills-list {
+        max-width: 700px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    .skill-item {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .skill-label {
+        font-weight: 600;
+        min-width: 180px;
+        font-size: 0.95rem;
+    }
+
+    .skill-bar {
+        flex: 1;
+        height: 26px;
+        background: var(--border);
+        border-radius: 50px;
+        overflow: hidden;
+    }
+
+    .skill-fill {
+        height: 100%;
+        background: var(--accent);
+        border-radius: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        padding-right: 10px;
+        transition: width 1s ease;
+    }
+
+    .skill-fill span {
+        font-size: 0.8rem;
+        font-weight: 700;
+        color: #fff;
+    }
+
+    @media (max-width: 970px) {
+        .icon-grid-3,
+        .icon-grid-6,
+        .warum-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .section-title {
+            font-size: 1.6rem;
+            margin-bottom: 36px;
+        }
+    }
+
+    @media (max-width: 750px) {
+        .icon-grid-3,
+        .icon-grid-6,
+        .warum-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .why-bg {
+            padding: 60px 0;
+            background-attachment: scroll;
+        }
+
+        .why-text {
+            font-size: 1rem;
+        }
+
+        .skill-item {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 8px;
+        }
+
+        .skill-label {
+            min-width: auto;
+        }
+    }
+</style>

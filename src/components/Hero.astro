@@ -1,0 +1,377 @@
+---
+export interface Slide {
+    id: string;
+    heading: string;
+    subtext: string;
+    ctaLabel: string;
+    ctaHref: string;
+    bgGradient: string;
+    image?: string;
+    imageGradient?: string;
+}
+
+const slides: Slide[] = [
+    {
+        id: "einstieg",
+        heading:
+            "Sie möchten ein Projekt realisieren, sind jedoch unsicher, wie Sie vorgehen sollen?",
+        subtext:
+            "Mit uns bekommen Sie einen verlässlichen Partner für Ihre maßgeschneiderte Softwarelösung von A bis Z.",
+        ctaLabel: "Jetzt kontaktieren",
+        ctaHref: "/kontakt/",
+        bgGradient: "linear-gradient(300deg, #fefdcd, #a3e6ff)",
+        image: "schneider.png",
+        imageGradient: "linear-gradient(#22c1c3, #c98b32)",
+    },
+    {
+        id: "startup",
+        heading: "Erfolgreiche Softwareentwicklung für Startups",
+        subtext:
+            "Du hast eine geniale Idee für ein Startup, einen Investor an der Hand und bist bereit durchzustarten.",
+        ctaLabel: "Jetzt durchstarten",
+        ctaHref: "/leistungen/startups/",
+        bgGradient: "linear-gradient(300deg, #fcdabd, #cbdef4)",
+        image: "Rakete.png",
+        imageGradient: "linear-gradient(#c99e65, #c98b32)",
+    },
+    {
+        id: "produktentwicklung",
+        heading: "Partner für maßgeschneiderte Softwarelösungen",
+        subtext:
+            "Von der Innovation eines Startups bis zur Weiterentwicklung etablierter Projekte, bringen wir Ihre Visionen zum Leben. Leidenschaftlich. Kreativ. Zuverlässig.",
+        ctaLabel: "Ihre Vision, unsere Passion",
+        ctaHref: "/leistungen/produktentwicklung/",
+        bgGradient: "linear-gradient(300deg, #fbe0fc, #bbf9e7)",
+        image: "Produktentwicklung.png",
+        imageGradient: "linear-gradient(#96edf4, #f15fa2)",
+    },
+    {
+        id: "softwaredesign",
+        heading: "Die Kunst des Softwaredesigns",
+        subtext:
+            "Jedes Projekt ist einzigartig, und wir setzen unsere Leidenschaft und Expertise ein, um Software zu gestalten, die perfekt zu Ihren Wünschen und Anforderungen passt.",
+        ctaLabel: "Details erkunden",
+        ctaHref: "/leistungen/softwaredesign/",
+        bgGradient: "linear-gradient(300deg, #c5daf9, #dbffea)",
+        image: "Softwaredesign.png",
+        imageGradient: "linear-gradient(#96f4e9, #5f92f1)",
+    },
+    {
+        id: "digitalisierung",
+        heading: "Digitalisierung",
+        subtext:
+            "Nutzen Sie die Chancen der Digitalisierung und bleiben Sie wettbewerbsfähig in einer sich ständig verändernden Geschäftswelt. Wir helfen Ihnen dabei.",
+        ctaLabel: "Entdecken Sie ihre digitale Zukunft",
+        ctaHref: "/leistungen/digitalisierung/",
+        bgGradient: "linear-gradient(300deg, #fcdbcf, #d4f4e9)",
+        image: undefined,
+        imageGradient: undefined,
+    },
+];
+
+import { Image } from "astro:assets";
+
+const { activeSlide = 0 } = Astro.props as { activeSlide?: number };
+---
+
+<section class="hero" aria-label="Hero Slider">
+    {
+        slides.map((slide, i) => (
+            <div
+                class="hero-slide"
+                class:list={{ "hero-slide--active": i === activeSlide }}
+                style={{ background: slide.bgGradient }}
+                aria-hidden={i !== activeSlide}
+            >
+                <div class="container hero-content">
+                    <div class="hero-text">
+                        <h1 class="hero-heading">{slide.heading}</h1>
+                        <p class="hero-subtext">{slide.subtext}</p>
+                        <a href={slide.ctaHref} class="hero-cta">
+                            {slide.ctaLabel}
+                        </a>
+                    </div>
+                    {slide.image && (
+                        <div class="hero-image-wrap">
+                            <div
+                                class="hero-image-ring"
+                                style={{ background: slide.imageGradient }}
+                            >
+                                <Image
+                                    src={`https://www.depero.de/wp-content/uploads/${slide.image}`}
+                                    alt=""
+                                    class="hero-image"
+                                    loading={i === 0 ? "eager" : "lazy"}
+                                    width={400}
+                                    height={400}
+                                />
+                            </div>
+                        </div>
+                    )}
+                </div>
+            </div>
+        ))
+    }
+    <div class="hero-controls" role="tablist" aria-label="Slide Navigation">
+        {
+            slides.map((slide, i) => (
+                <button
+                    class="hero-dot"
+                    class:list={{ "hero-dot--active": i === activeSlide }}
+                    role="tab"
+                    aria-selected={i === activeSlide}
+                    aria-label={`Slide ${i + 1}: ${slide.heading.substring(0, 40)}`}
+                    data-slide={i}
+                >
+                    <span class="sr-only">Slide {i + 1}</span>
+                </button>
+            ))
+        }
+    </div>
+</section>
+
+<script>
+    class HeroSlider {
+        current = 0;
+        slides;
+        dots;
+        interval;
+
+        constructor() {
+            this.slides = document.querySelectorAll(".hero-slide");
+            this.dots = document.querySelectorAll(".hero-dot");
+            if (this.slides.length <= 1) return;
+
+            this.dots.forEach((dot) => {
+                dot.addEventListener("click", () => {
+                    const idx = parseInt(dot.dataset.slide ?? "0");
+                    this.goTo(idx);
+                    this.resetInterval();
+                });
+            });
+
+            this.startInterval();
+        }
+
+        goTo(idx) {
+            this.slides.forEach((s, i) => {
+                s.classList.toggle("hero-slide--active", i === idx);
+                s.setAttribute("aria-hidden", i !== idx ? "true" : "false");
+            });
+            this.dots.forEach((d, i) => {
+                d.classList.toggle("hero-dot--active", i === idx);
+                d.setAttribute("aria-selected", i === idx ? "true" : "false");
+            });
+            this.current = idx;
+        }
+
+        startInterval() {
+            this.interval = setInterval(() => {
+                this.goTo((this.current + 1) % this.slides.length);
+            }, 6000);
+        }
+
+        resetInterval() {
+            clearInterval(this.interval);
+            this.startInterval();
+        }
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+        new HeroSlider();
+    });
+</script>
+
+<style>
+    .hero {
+        position: relative;
+        overflow: hidden;
+        margin-top: 70px;
+    }
+
+    .hero-slide {
+        display: none;
+        min-height: 600px;
+        padding: 100px 0;
+        align-items: center;
+    }
+
+    .hero-slide--active {
+        display: flex;
+    }
+
+    .hero-content {
+        display: flex;
+        align-items: center;
+        gap: 60px;
+        width: 100%;
+    }
+
+    .hero-text {
+        flex: 1;
+        min-width: 0;
+        animation: fadeInUp 0.8s ease-out;
+    }
+
+    .hero-heading {
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-bottom: 20px;
+        color: var(--dark);
+        animation: fadeInUp 0.8s ease-out 0.1s both;
+    }
+
+    .hero-subtext {
+        font-size: 1.1rem;
+        line-height: 1.7;
+        color: #444;
+        margin-bottom: 32px;
+        max-width: 600px;
+        animation: fadeInUp 0.8s ease-out 0.2s both;
+    }
+
+    .hero-cta {
+        display: inline-block;
+        padding: 14px 36px;
+        border: 2px solid var(--dark);
+        border-radius: 50px;
+        font-family: var(--font-heading);
+        font-size: 1rem;
+        font-weight: 700;
+        color: var(--dark);
+        background: transparent;
+        transition:
+            background 0.3s,
+            color 0.3s;
+        animation: fadeInUp 0.8s ease-out 0.3s both;
+    }
+
+    .hero-cta:hover {
+        background: var(--dark);
+        color: #fff;
+    }
+
+    .hero-image-wrap {
+        flex-shrink: 0;
+        width: 320px;
+        height: 320px;
+        animation: scaleIn 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) 0.15s both;
+    }
+
+    .hero-image-ring {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        animation: float 6s ease-in-out infinite;
+    }
+
+    .hero-image {
+        width: 70%;
+        height: 70%;
+        object-fit: contain;
+        filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.1));
+    }
+
+    .hero-controls {
+        position: absolute;
+        bottom: 30px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        gap: 10px;
+    }
+
+    .hero-dot {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        border: 2px solid var(--dark);
+        background: transparent;
+        cursor: pointer;
+        transition: background 0.3s;
+    }
+
+    .hero-dot--active {
+        background: var(--dark);
+    }
+
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes scaleIn {
+        from {
+            opacity: 0;
+            transform: scale(0);
+        }
+        to {
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+
+    @keyframes float {
+        0%,
+        100% {
+            transform: translateY(0);
+        }
+        50% {
+            transform: translateY(-10px);
+        }
+    }
+
+    @media (max-width: 970px) {
+        .hero-slide {
+            min-height: auto;
+            padding: 60px 0 80px;
+        }
+
+        .hero-content {
+            flex-direction: column;
+            text-align: center;
+            gap: 40px;
+        }
+
+        .hero-heading {
+            font-size: 1.8rem;
+        }
+
+        .hero-subtext {
+            max-width: 100%;
+        }
+
+        .hero-image-wrap {
+            width: 240px;
+            height: 240px;
+        }
+    }
+
+    @media (max-width: 750px) {
+        .hero-slide {
+            padding: 40px 0 70px;
+        }
+
+        .hero-heading {
+            font-size: 1.4rem;
+        }
+
+        .hero-subtext {
+            font-size: 1rem;
+        }
+
+        .hero-image-wrap {
+            width: 180px;
+            height: 180px;
+        }
+    }
+</style>
