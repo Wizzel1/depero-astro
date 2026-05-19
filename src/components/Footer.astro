@@ -1,31 +1,15 @@
+---
+import { Image } from "astro:assets";
+import logo from "../assets/depero-logo.png";
+---
+
 <footer class="footer" transition:name="footer">
     <div class="container">
         <div class="footer-content">
             <div class="footer-logo">
-                <svg
-                    width="200"
-                    height="73"
-                    viewBox="0 0 414 150"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                >
-                    <text
-                        x="0"
-                        y="120"
-                        font-family="Averia Serif Libre, serif"
-                        font-size="90"
-                        font-weight="bold"
-                        fill="#0c0c0c">depero</text
-                    >
-                    <text
-                        x="0"
-                        y="145"
-                        font-family="sans-serif"
-                        font-size="14"
-                        fill="#0c0c0c"
-                        letter-spacing="4">it macher.</text
-                    >
-                </svg>
+                <a href="/" aria-label="depero — zur Startseite">
+                    <Image src={logo} alt="depero Logo" width="142" height="51" />
+                </a>
             </div>
             <p class="footer-tagline">
                 Kreative Experten entwickeln mit Ihnen zusammen eine
