@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import PageHero from "../../components/PageHero.astro";
 ---
 
 <BaseLayout
@@ -7,17 +8,11 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
     description="termin.app - Terminmanagement von depero. Coming soon."
 >
     <main>
-        <section
-            class="page-hero"
-            style="background: linear-gradient(300deg, #c5daf9, #dbffea)"
-        >
-            <div class="container">
-                <p class="breadcrumb">Home > termin.app</p>
-                <h1 class="page-title">termin.app</h1>
-                <p class="page-subtitle">Eine App von depero.</p>
-            </div>
-        </section>
-
+        <PageHero
+            title="termin.app"
+            subtitle="Eine App von depero."
+            background="linear-gradient(300deg, #c5daf9, #dbffea)"
+        />
         <section class="section-padding">
             <div class="container" style="text-align: center">
                 <div class="coming-soon">
@@ -47,28 +42,6 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 </BaseLayout>
 
 <style>
-    .page-hero {
-        padding: 140px 0 60px;
-        margin-top: 70px;
-    }
-
-    .breadcrumb {
-        font-size: 0.85rem;
-        color: #666;
-        margin-bottom: 16px;
-    }
-
-    .page-title {
-        font-size: 2.8rem;
-        font-weight: 700;
-        margin-bottom: 12px;
-    }
-
-    .page-subtitle {
-        font-size: 1.2rem;
-        color: #555;
-    }
-
     .coming-soon {
         padding: 80px 20px;
         max-width: 500px;

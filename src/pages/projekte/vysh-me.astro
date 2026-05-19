@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import CtaButton from "../../components/CtaButton.astro";
+import PageHero from "../../components/PageHero.astro";
 ---
 
 <BaseLayout
@@ -8,17 +9,11 @@ import CtaButton from "../../components/CtaButton.astro";
     description="vysh.me: Moderne Wunschlisten-App. Wünsche aus beliebigen Online-Shops speichern und teilen. Browser oder App (iOS/Android)."
 >
     <main>
-        <section
-            class="page-hero"
-            style="background: linear-gradient(300deg, #fefdcd, #a3e6ff)"
-        >
-            <div class="container">
-                <p class="breadcrumb">Home > vysh.me</p>
-                <h1 class="page-title">vysh.me – Wünsche einfach teilen.</h1>
-                <p class="page-subtitle">Eine App von depero.</p>
-            </div>
-        </section>
-
+        <PageHero
+            title="vysh.me – Wünsche einfach teilen."
+            subtitle="Eine App von depero."
+            background="linear-gradient(300deg, #fefdcd, #a3e6ff)"
+        />
         <section class="section-padding">
             <div class="container content-width">
                 <blockquote class="quote">
@@ -117,28 +112,6 @@ import CtaButton from "../../components/CtaButton.astro";
 </BaseLayout>
 
 <style>
-    .page-hero {
-        padding: 140px 0 60px;
-        margin-top: 70px;
-    }
-
-    .breadcrumb {
-        font-size: 0.85rem;
-        color: #666;
-        margin-bottom: 16px;
-    }
-
-    .page-title {
-        font-size: 2.8rem;
-        font-weight: 700;
-        margin-bottom: 12px;
-    }
-
-    .page-subtitle {
-        font-size: 1.2rem;
-        color: #555;
-    }
-
     .content-width {
         max-width: 800px;
         margin: 0 auto;
@@ -233,10 +206,6 @@ import CtaButton from "../../components/CtaButton.astro";
     }
 
     @media (max-width: 750px) {
-        .page-title {
-            font-size: 1.8rem;
-        }
-
         .tech-grid {
             grid-template-columns: 1fr;
         }

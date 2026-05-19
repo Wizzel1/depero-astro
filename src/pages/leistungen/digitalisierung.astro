@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import CtaButton from "../../components/CtaButton.astro";
+import PageHero from "../../components/PageHero.astro";
 ---
 
 <BaseLayout
@@ -8,20 +9,11 @@ import CtaButton from "../../components/CtaButton.astro";
     description="Nutzen Sie die Chancen der Digitalisierung für Ihr mittelständisches Unternehmen. depero hilft Ihnen bei der digitalen Transformation."
 >
     <main>
-        <section
-            class="page-hero"
-            style="background: linear-gradient(300deg, #fcdbcf, #d4f4e9)"
-        >
-            <div class="container">
-                <p class="breadcrumb">Home > Digitalisierung</p>
-                <h1 class="page-title">Die Digitale Transformation</h1>
-                <p class="page-subtitle">
-                    Chancen und Herausforderungen für mittelständische
-                    Unternehmen
-                </p>
-            </div>
-        </section>
-
+        <PageHero
+            title="Die Digitale Transformation"
+            subtitle="Chancen und Herausforderungen für mittelständische Unternehmen"
+            background="linear-gradient(300deg, #fcdbcf, #d4f4e9)"
+        />
         <section class="section-padding">
             <div class="container content-width">
                 <h2 class="section-heading">
@@ -150,28 +142,6 @@ import CtaButton from "../../components/CtaButton.astro";
 </BaseLayout>
 
 <style>
-    .page-hero {
-        padding: 140px 0 60px;
-        margin-top: 70px;
-    }
-
-    .breadcrumb {
-        font-size: 0.85rem;
-        color: #666;
-        margin-bottom: 16px;
-    }
-
-    .page-title {
-        font-size: 2.8rem;
-        font-weight: 700;
-        margin-bottom: 12px;
-    }
-
-    .page-subtitle {
-        font-size: 1.2rem;
-        color: #555;
-    }
-
     .content-width {
         max-width: 800px;
         margin: 0 auto;
@@ -240,10 +210,6 @@ import CtaButton from "../../components/CtaButton.astro";
     }
 
     @media (max-width: 750px) {
-        .page-title {
-            font-size: 1.8rem;
-        }
-
         .service-list {
             grid-template-columns: 1fr;
         }

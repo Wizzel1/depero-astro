@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import CtaButton from "../../components/CtaButton.astro";
+import PageHero from "../../components/PageHero.astro";
 ---
 
 <BaseLayout
@@ -8,19 +9,10 @@ import CtaButton from "../../components/CtaButton.astro";
     description="Schluss mit Zettelwirtschaft: Digitale Zeiterfassung für kleine Unternehmen. Moderne SaaS-Plattform stempeln.app von depero."
 >
     <main>
-        <section
-            class="page-hero"
-            style="background: linear-gradient(300deg, #fcdabd, #cbdef4)"
-        >
-            <div class="container">
-                <p class="breadcrumb">Home > stempeln.app</p>
-                <h1 class="page-title">
-                    Schluss mit Zettelwirtschaft: Warum kleine Unternehmen von
-                    digitaler Zeiterfassung profitieren
-                </h1>
-            </div>
-        </section>
-
+        <PageHero
+            title="Schluss mit Zettelwirtschaft: Warum kleine Unternehmen von digitaler Zeiterfassung profitieren"
+            background="linear-gradient(300deg, #fcdabd, #cbdef4)"
+        />
         <section class="section-padding">
             <div class="container content-width">
                 <h2 class="section-heading">
@@ -105,24 +97,6 @@ import CtaButton from "../../components/CtaButton.astro";
 </BaseLayout>
 
 <style>
-    .page-hero {
-        padding: 140px 0 60px;
-        margin-top: 70px;
-    }
-
-    .breadcrumb {
-        font-size: 0.85rem;
-        color: #666;
-        margin-bottom: 16px;
-    }
-
-    .page-title {
-        font-size: 2.4rem;
-        font-weight: 700;
-        margin-bottom: 12px;
-        max-width: 900px;
-    }
-
     .content-width {
         max-width: 800px;
         margin: 0 auto;
@@ -187,11 +161,5 @@ import CtaButton from "../../components/CtaButton.astro";
         font-size: 1.4rem;
         font-family: var(--font-heading);
         margin-bottom: 24px;
-    }
-
-    @media (max-width: 750px) {
-        .page-title {
-            font-size: 1.6rem;
-        }
     }
 </style>

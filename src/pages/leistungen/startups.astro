@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import CtaButton from "../../components/CtaButton.astro";
+import PageHero from "../../components/PageHero.astro";
 ---
 
 <BaseLayout
@@ -8,19 +9,11 @@ import CtaButton from "../../components/CtaButton.astro";
     description="Du hast eine geniale Idee für ein Startup und suchst die richtigen Softwareentwickler? depero ist dein Entwicklungspartner für MVP, Prototyping und mehr."
 >
     <main>
-        <section
-            class="page-hero"
-            style="background: linear-gradient(300deg, #fcdabd, #cbdef4)"
-        >
-            <div class="container">
-                <p class="breadcrumb">Home > Startup-Zusammenarbeit</p>
-                <h1 class="page-title">
-                    Erfolgreiche Softwareentwicklung für Startups
-                </h1>
-                <p class="page-subtitle">depero als Dein Entwicklungspartner</p>
-            </div>
-        </section>
-
+        <PageHero
+            title="Erfolgreiche Softwareentwicklung für Startups"
+            subtitle="depero als Dein Entwicklungspartner"
+            background="linear-gradient(300deg, #fcdabd, #cbdef4)"
+        />
         <section class="section-padding">
             <div class="container content-width">
                 <p class="intro-text">
@@ -119,28 +112,6 @@ import CtaButton from "../../components/CtaButton.astro";
 </BaseLayout>
 
 <style>
-    .page-hero {
-        padding: 140px 0 60px;
-        margin-top: 70px;
-    }
-
-    .breadcrumb {
-        font-size: 0.85rem;
-        color: #666;
-        margin-bottom: 16px;
-    }
-
-    .page-title {
-        font-size: 2.8rem;
-        font-weight: 700;
-        margin-bottom: 12px;
-    }
-
-    .page-subtitle {
-        font-size: 1.2rem;
-        color: #555;
-    }
-
     .content-width {
         max-width: 800px;
         margin: 0 auto;
@@ -193,10 +164,6 @@ import CtaButton from "../../components/CtaButton.astro";
     }
 
     @media (max-width: 750px) {
-        .page-title {
-            font-size: 1.8rem;
-        }
-
         .service-list {
             grid-template-columns: 1fr;
         }

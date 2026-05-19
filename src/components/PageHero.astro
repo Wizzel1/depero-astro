@@ -1,0 +1,47 @@
+---
+interface Props {
+    title: string;
+    subtitle?: string;
+    background?: string;
+}
+
+const {
+    title,
+    subtitle,
+    background = "linear-gradient(300deg, #fefdcd, #a3e6ff)",
+} = Astro.props;
+---
+
+<section class="page-hero" style={{ background }}>
+    <div class="container">
+        <h1 class="page-title">{title}</h1>
+        {subtitle && <p class="page-subtitle">{subtitle}</p>}
+    </div>
+</section>
+
+<style>
+    .page-hero {
+        margin-top: 70px;
+        min-height: 300px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .page-title {
+        font-size: 2.8rem;
+        font-weight: 700;
+        margin-bottom: 12px;
+    }
+
+    .page-subtitle {
+        font-size: 1.2rem;
+        color: #555;
+    }
+
+    @media (max-width: 750px) {
+        .page-title {
+            font-size: 1.8rem;
+        }
+    }
+</style>
