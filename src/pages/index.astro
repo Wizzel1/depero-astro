@@ -129,50 +129,51 @@ const pageDesc =
             </div>
         </section>
 
-        <section class="section-padding section-why">
-            <div class="container">
-                <div class="why-grid">
-                    <Image src={team} alt="depero team" width={1024} />
-                    <div class="why-content">
-                        <h2 class="section-title">
-                            Setzen Sie auf Ein Team aus kreativen Köpfen...
-                        </h2>
-                        <p class="why-text">
-                            Ein Team aus kreativen Köpfen, dass ihre Bedürfnisse
-                            aufnimmt, analysiert und zielgerichtet
-                            Lösungsvorschläge für Sie erarbeitet. Durch die
-                            Anwendung agiler Methodiken sind wir jederzeit in
-                            der Lage auf sich ändernde Bedürfnisse und
-                            Begebenheiten zu reagieren. Dabei setzen wir einen
-                            Fokus auf perfekte Umsetzung um die Zufriedenheit
-                            ihrer Zielgruppe und die Erfüllung ihrere
-                            Bedürfnisse zu maximieren.
-                        </p>
-                        <div class="why-cta">
-                            <CtaButton href="/kontakt/" label="KONTAKT" />
-                        </div>
-                    </div>
+        <section class="section-padding team-section">
+            <div class="team-image">
+                <Image
+                    src={team}
+                    alt="depero team"
+                    width={1024}
+                    class="team-img"
+                />
+            </div>
+            <div class="team-content">
+                <h2 class="section-title">
+                    Setzen Sie auf Ein Team aus kreativen Köpfen...
+                </h2>
+                <p class="team-text">
+                    Ein Team aus kreativen Köpfen, dass ihre Bedürfnisse
+                    aufnimmt, analysiert und zielgerichtet Lösungsvorschläge für
+                    Sie erarbeitet. Durch die Anwendung agiler Methodiken sind
+                    wir jederzeit in der Lage auf sich ändernde Bedürfnisse und
+                    Begebenheiten zu reagieren. Dabei setzen wir einen Fokus auf
+                    perfekte Umsetzung um die Zufriedenheit ihrer Zielgruppe und
+                    die Erfüllung ihrere Bedürfnisse zu maximieren.
+                </p>
+                <div class="team-cta">
+                    <CtaButton href="/kontakt/" label="KONTAKT" />
                 </div>
             </div>
         </section>
 
-        <section class="section-padding section-warum-skills">
+        <section class="section-padding why-section">
             <div class="container">
                 <h2 class="section-title section-title-sm">
                     Warum sollten Sie uns wählen?
                 </h2>
-                <div class="warum-skills-grid">
-                    <div class="warum-col">
-                        <div class="warum-card">
-                            <h3 class="warum-card-title">Expertise</h3>
-                            <p class="warum-card-desc">
+                <div class="why-grid">
+                    <div class="why-col">
+                        <div class="why-card">
+                            <h3 class="why-card-title">Expertise</h3>
+                            <p class="why-card-desc">
                                 Langjährige Projekte im Konzernumfeld u.a. im
                                 Banken-, Leasing- und Versicherungsbereich.
                             </p>
                         </div>
-                        <div class="warum-card">
-                            <h3 class="warum-card-title">Fokus</h3>
-                            <p class="warum-card-desc">
+                        <div class="why-card">
+                            <h3 class="why-card-title">Fokus</h3>
+                            <p class="why-card-desc">
                                 Wir setzen den Fokus auf perfekte Umsetzung um
                                 die Zufriedenheit ihrer Zielgruppe und die
                                 Erfüllung ihrer Bedürfnisse zu maximieren. Dies
@@ -183,9 +184,9 @@ const pageDesc =
                                 Projektmanagement.
                             </p>
                         </div>
-                        <div class="warum-card">
-                            <h3 class="warum-card-title">History</h3>
-                            <p class="warum-card-desc">
+                        <div class="why-card">
+                            <h3 class="why-card-title">History</h3>
+                            <p class="why-card-desc">
                                 depero ist ein Zusammenschluss von mehreren
                                 Consultants und Entwicklern die mit Herz und
                                 Seele im Bereich Digitalisierung tätig sind.
@@ -196,7 +197,7 @@ const pageDesc =
                             </p>
                         </div>
                     </div>
-                    <div class="warum-col">
+                    <div class="why-col">
                         <div class="skills-list">
                             <div class="skill-item">
                                 <div class="skill-label">Business Analyse</div>
@@ -469,66 +470,73 @@ const pageDesc =
         line-height: 1.6;
     }
 
-    .section-why {
-        background: #fff;
-    }
-
-    .why-grid {
+    .team-section {
         display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 60px;
+        grid-template-columns: 1.5fr 1fr;
         align-items: center;
+        background: #fff;
+        padding-right: max(20px, calc((100vw - 1200px) / 4 + 10px));
     }
 
-    .why-content {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
+    .team-content {
+        max-width: 540px;
+        padding-left: 60px;
     }
 
-    .why-content .section-title {
+    .team-content .section-title {
         text-align: left;
     }
 
-    .why-text {
+    .team-text {
         font-size: 1.1rem;
         line-height: 1.8;
         color: #444;
         margin-bottom: 40px;
     }
 
-    .section-warum-skills {
+    .team-image {
+        min-width: 0;
+    }
+
+    .team-img {
+        width: 100% !important;
+        height: auto !important;
+        border-radius: 12px;
+        display: block;
+    }
+
+    .why-section {
         background: #fff;
     }
 
-    .section-warum-skills .section-title-sm {
+    .why-section .section-title-sm {
         margin-bottom: 40px;
     }
 
-    .warum-skills-grid {
+    .why-grid {
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 60px;
     }
 
-    .warum-col {
+    .why-col {
         display: flex;
         flex-direction: column;
         justify-content: center;
     }
 
-    .warum-card {
+    .why-card {
         padding: 12px 0;
     }
 
-    .warum-card-title {
+    .why-card-title {
         font-family: var(--font-heading);
         font-size: 1.1rem;
         margin-bottom: 6px;
         color: var(--accent);
     }
 
-    .warum-card-desc {
+    .why-card-desc {
         font-size: 0.9rem;
         line-height: 1.6;
     }
@@ -583,8 +591,13 @@ const pageDesc =
             grid-template-columns: repeat(2, 1fr);
         }
 
-        .why-grid,
-        .warum-skills-grid {
+        .team-section {
+            grid-template-columns: 1fr;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+        .why-grid {
             grid-template-columns: 1fr;
             gap: 40px;
         }
@@ -601,7 +614,7 @@ const pageDesc =
             grid-template-columns: 1fr;
         }
 
-        .why-text {
+        .team-text {
             font-size: 1rem;
         }
 
