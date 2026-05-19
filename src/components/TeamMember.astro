@@ -1,0 +1,59 @@
+---
+export interface Props {
+    name: string;
+    role: string;
+}
+
+const { name, role } = Astro.props;
+const initials = name
+    .split(" ")
+    .map((n) => n[0])
+    .join("")
+    .toUpperCase();
+---
+
+<div class="team-card">
+    <div class="team-avatar">{initials}</div>
+    <h3 class="team-name">{name}</h3>
+    <p class="team-role">{role}</p>
+</div>
+
+<style>
+    .team-card {
+        text-align: center;
+        padding: 24px 16px;
+        background: #fff;
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        transition: box-shadow 0.2s;
+    }
+
+    .team-card:hover {
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    }
+
+    .team-avatar {
+        width: 72px;
+        height: 72px;
+        border-radius: 50%;
+        background: var(--accent);
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+        font-size: 1.3rem;
+        margin: 0 auto 16px;
+    }
+
+    .team-name {
+        font-family: var(--font-heading);
+        font-size: 1.15rem;
+        margin-bottom: 4px;
+    }
+
+    .team-role {
+        font-size: 0.9rem;
+        color: #777;
+    }
+</style>

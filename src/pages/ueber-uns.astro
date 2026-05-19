@@ -1,0 +1,235 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import TeamMember from "../components/TeamMember.astro";
+import TimelineEntry from "../components/TimelineEntry.astro";
+import CtaButton from "../components/CtaButton.astro";
+
+const team = [
+    { name: "Dennis", role: "Geschäftsführer" },
+    { name: "Peter", role: "Geschäftsführer" },
+    { name: "Robin", role: "Geschäftsführer" },
+    { name: "Matthias", role: "IT Engineer / IT Professional" },
+    { name: "Stefan", role: "IT Engineer / IT Professional" },
+    { name: "Britta", role: "Backoffice / Accounting" },
+    { name: "Carmen", role: "Key Account Managerin" },
+];
+
+const values = [
+    {
+        title: "Transparenz",
+        desc: "Transparenz schafft Vertrauen. Vertrauen ist unser Schlüssel zu konstruktiven Partnerschaften.",
+    },
+    {
+        title: "Kommunikation",
+        desc: "Kommunikation ermöglicht es uns zielorientiert und effizient vorzugehen. Wir schätzen vor allem Kommunikation auf Augenhöhe.",
+    },
+    {
+        title: "Fokus",
+        desc: "Uns ist es wichtig, sich vor allem auf die wesentlichen und notwendigen Dinge zu fokussieren.",
+    },
+    {
+        title: "Respekt",
+        desc: "Wir möchten uns auf allen Ebenen mit Achtung und Wertschätzung begegnen.",
+    },
+    {
+        title: "Neugier",
+        desc: "Neugier ist eine wichtige Eigenschaft unserer Arbeitsweise, da sie dazu beiträgt, dass wir stets offen für neue Ideen sind.",
+    },
+];
+
+const timeline = [
+    {
+        date: "2023",
+        event: "vysh.me erreicht 10.000 Nutzer, die für 43.000 Wünsche, vysh.me genutzt haben",
+    },
+    {
+        date: "2023",
+        event: "Mitarbeiterzuwachs: Matthias Töppe, Stefan Schwarting und Carmen van der Wals",
+    },
+    {
+        date: "2022",
+        event: "vysh.me im Apple App Store und Google Playstore verfügbar",
+    },
+    { date: "2020", event: "Britta Rothkamp wird Teil von depero" },
+    {
+        date: "01.03.2020",
+        event: "Firmengründung depero — Zusammenschluss von Dennis Langlitz, Peter Rothkamp und Robin van der Wals",
+    },
+];
+---
+
+<BaseLayout
+    title="depero - über uns, unser Mindset, unser Team, unsere Firma"
+    description="depero ist ein Zusammenschluss von mehreren Consultants und Entwicklern die mit Herz und Seele im Bereich Digitalisierung tätig sind."
+>
+    <main>
+        <section
+            class="page-hero"
+            style="background: linear-gradient(300deg, #fefdcd, #a3e6ff)"
+        >
+            <div class="container">
+                <p class="breadcrumb">Home > Über uns</p>
+                <h1 class="page-title">Über uns</h1>
+            </div>
+        </section>
+
+        <section class="section-padding">
+            <div class="container content-width">
+                <blockquote class="quote">
+                    depero ist ein Zusammenschluss von mehreren Consultants und
+                    Entwicklern die mit Herz und Seele im Bereich
+                    Digitalisierung tätig sind. Dabei greift depero auf
+                    Erfahrungen aus über 20 Jahren zurück. Wir haben schon
+                    "digitalisiert" als das Wort noch gar nicht dafür verwendet
+                    wurde.
+                </blockquote>
+            </div>
+        </section>
+
+        <section class="section-padding" style="background: var(--light-bg)">
+            <div class="container content-width">
+                <h2 class="section-heading">Unser Mindset</h2>
+                <div class="values-grid">
+                    {
+                        values.map((v) => (
+                            <div class="value-card">
+                                <h3 class="value-title">{v.title}</h3>
+                                <p class="value-desc">{v.desc}</p>
+                            </div>
+                        ))
+                    }
+                </div>
+            </div>
+        </section>
+
+        <section class="section-padding">
+            <div class="container">
+                <h2 class="section-heading" style="text-align: center">
+                    Unser Team
+                </h2>
+                <div class="team-grid">
+                    {
+                        team.map((m) => (
+                            <TeamMember name={m.name} role={m.role} />
+                        ))
+                    }
+                </div>
+            </div>
+        </section>
+
+        <section class="section-padding" style="background: var(--light-bg)">
+            <div class="container content-width">
+                <h2 class="section-heading">Unsere Geschichte</h2>
+                <div class="timeline">
+                    {
+                        timeline.map((t) => (
+                            <TimelineEntry date={t.date} event={t.event} />
+                        ))
+                    }
+                </div>
+            </div>
+        </section>
+
+        <section class="section-padding section-cta">
+            <div class="container" style="text-align: center">
+                <p class="cta-text">Lust Teil des Teams zu werden?</p>
+                <CtaButton href="/jobs/" label="Zu den Jobs" />
+            </div>
+        </section>
+    </main>
+</BaseLayout>
+
+<style>
+    .page-hero {
+        padding: 140px 0 60px;
+        margin-top: 70px;
+    }
+
+    .breadcrumb {
+        font-size: 0.85rem;
+        color: #666;
+        margin-bottom: 16px;
+    }
+
+    .page-title {
+        font-size: 2.8rem;
+        font-weight: 700;
+        margin-bottom: 12px;
+    }
+
+    .content-width {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .quote {
+        font-size: 1.2rem;
+        font-family: var(--font-heading);
+        font-style: italic;
+        color: #555;
+        border-left: 4px solid var(--accent);
+        padding: 20px 24px;
+        margin: 0;
+        line-height: 1.7;
+    }
+
+    .section-heading {
+        font-size: 1.6rem;
+        margin-bottom: 32px;
+        color: var(--dark);
+    }
+
+    .values-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+        gap: 20px;
+    }
+
+    .value-card {
+        padding: 24px;
+        background: #fff;
+        border-radius: 12px;
+        border: 1px solid var(--border);
+        transition: box-shadow 0.2s;
+    }
+
+    .value-card:hover {
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+    }
+
+    .value-title {
+        font-family: var(--font-heading);
+        font-size: 1.15rem;
+        color: var(--accent);
+        margin-bottom: 8px;
+    }
+
+    .value-desc {
+        font-size: 0.95rem;
+        color: #555;
+        line-height: 1.6;
+    }
+
+    .team-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 24px;
+    }
+
+    .timeline {
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    .cta-text {
+        font-size: 1.4rem;
+        font-family: var(--font-heading);
+        margin-bottom: 24px;
+    }
+
+    @media (max-width: 750px) {
+        .page-title {
+            font-size: 1.8rem;
+        }
+    }
+</style>
