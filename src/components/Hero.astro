@@ -241,7 +241,7 @@ const { activeSlide = 0 } = Astro.props as { activeSlide?: number };
     }
 
     .hero-heading {
-        font-size: 2.5rem;
+        font-size: var(--fs-heading-1);
         font-weight: 700;
         margin-bottom: 20px;
         color: var(--dark);
@@ -249,7 +249,7 @@ const { activeSlide = 0 } = Astro.props as { activeSlide?: number };
     }
 
     .hero-subtext {
-        font-size: 1.1rem;
+        font-size: var(--fs-body);
         line-height: 1.7;
         color: #444;
         margin-bottom: 32px;
@@ -263,7 +263,7 @@ const { activeSlide = 0 } = Astro.props as { activeSlide?: number };
         border: 2px solid var(--dark);
         border-radius: 50px;
         font-family: var(--font-heading);
-        font-size: 1rem;
+        font-size: var(--fs-body);
         font-weight: 700;
         color: var(--dark);
         background: transparent;
@@ -370,7 +370,7 @@ const { activeSlide = 0 } = Astro.props as { activeSlide?: number };
         }
 
         .hero-heading {
-            font-size: 1.8rem;
+            font-size: var(--fs-heading-2);
         }
 
         .hero-subtext {
@@ -389,11 +389,11 @@ const { activeSlide = 0 } = Astro.props as { activeSlide?: number };
         }
 
         .hero-heading {
-            font-size: 1.4rem;
+            font-size: var(--fs-heading-3);
         }
 
         .hero-subtext {
-            font-size: 1rem;
+            font-size: var(--fs-body);
         }
 
         .hero-image-wrap {

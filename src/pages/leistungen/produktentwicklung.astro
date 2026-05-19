@@ -65,7 +65,7 @@ import PageHero from "../../components/PageHero.astro";
     }
 
     .intro-text {
-        font-size: 1.3rem;
+        font-size: var(--fs-heading-3);
         font-family: var(--font-heading);
         font-style: italic;
         text-align: center;
@@ -74,7 +74,7 @@ import PageHero from "../../components/PageHero.astro";
     }
 
     .section-heading {
-        font-size: 1.5rem;
+        font-size: var(--fs-heading-2);
         margin-bottom: 24px;
         color: var(--dark);
     }
@@ -88,14 +88,14 @@ import PageHero from "../../components/PageHero.astro";
         margin-bottom: 10px;
         background: #fff;
         border-radius: 8px;
-        font-size: 1rem;
+        font-size: var(--fs-body);
         color: #555;
         border-left: 3px solid var(--accent);
         line-height: 1.5;
     }
 
     .cta-text {
-        font-size: 1.4rem;
+        font-size: var(--fs-heading-2);
         font-family: var(--font-heading);
         margin-bottom: 24px;
     }

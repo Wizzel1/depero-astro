@@ -51,7 +51,7 @@ const { date, event } = Astro.props;
 
     .timeline-date {
         display: inline-block;
-        font-size: 0.8rem;
+        font-size: var(--fs-small);
         font-weight: 700;
         text-transform: uppercase;
         letter-spacing: 1px;
@@ -60,7 +60,7 @@ const { date, event } = Astro.props;
     }
 
     .timeline-event {
-        font-size: 1rem;
+        font-size: var(--fs-body);
         color: #555;
         line-height: 1.5;
     }

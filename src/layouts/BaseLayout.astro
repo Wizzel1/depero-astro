@@ -75,6 +75,13 @@ const pageTransition = {
             Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
         --max-width: 1200px;
         --breakpoint-md: 750px;
+
+        /* Typography tokens */
+        --fs-heading-1: 2.5rem;
+        --fs-heading-2: 1.5rem;
+        --fs-heading-3: 1.2rem;
+        --fs-body: 1rem;
+        --fs-small: 0.9rem;
         --breakpoint-lg: 970px;
         --breakpoint-xl: 1170px;
     }
@@ -88,12 +95,12 @@ const pageTransition = {
     }
 
     html {
-        font-size: 16px;
         scroll-behavior: smooth;
     }
 
     body {
         font-family: var(--font-body);
+        font-size: var(--fs-body);
         color: var(--dark);
         line-height: 1.6;
         -webkit-font-smoothing: antialiased;
