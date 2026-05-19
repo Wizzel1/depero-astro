@@ -1,0 +1,117 @@
+<form class="contact-form" aria-label="Kontaktformular" novalidate>
+    <div class="form-group">
+        <label for="name">Name *</label>
+        <input type="text" id="name" name="name" required />
+    </div>
+    <div class="form-group">
+        <label for="email">E-Mail-Adresse *</label>
+        <input type="email" id="email" name="email" required />
+    </div>
+    <div class="form-group">
+        <label for="phone">Telefonnummer</label>
+        <input type="tel" id="phone" name="phone" />
+    </div>
+    <div class="form-group">
+        <label for="subject">Betreff</label>
+        <input type="text" id="subject" name="subject" />
+    </div>
+    <div class="form-group">
+        <label for="message">Ihre Nachricht *</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+    </div>
+    <div class="form-group checkbox-group">
+        <input type="checkbox" id="privacy" name="privacy" required />
+        <label for="privacy">
+            Ich stimme zu, dass meine Daten zur Beantwortung meiner Anfrage
+            verarbeitet und zu Dokumentationszwecken verwendet werden dürfen.
+            Ich habe die
+            <a href="/datenschutzerklaerung/">Datenschutzerklärung</a> der depero
+            GmbH gelesen und stimme dieser zu. *
+        </label>
+    </div>
+    <button type="submit" class="form-submit">Nachricht senden</button>
+</form>
+
+<style>
+    .contact-form {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .form-group {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+    }
+
+    .form-group label {
+        font-size: 0.9rem;
+        font-weight: 600;
+        color: var(--dark);
+    }
+
+    .form-group input,
+    .form-group textarea {
+        padding: 12px 16px;
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        font-family: var(--font-body);
+        font-size: 1rem;
+        color: var(--dark);
+        background: #fff;
+        transition: border-color 0.2s;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+        outline: none;
+        border-color: var(--accent);
+    }
+
+    .checkbox-group {
+        flex-direction: row;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .checkbox-group input[type="checkbox"] {
+        margin-top: 3px;
+        width: 18px;
+        height: 18px;
+        flex-shrink: 0;
+    }
+
+    .checkbox-group label {
+        font-weight: 400;
+        font-size: 0.85rem;
+        color: #555;
+        line-height: 1.5;
+    }
+
+    .checkbox-group label a {
+        color: var(--accent);
+        text-decoration: underline;
+    }
+
+    .form-submit {
+        align-self: flex-start;
+        padding: 14px 36px;
+        border: 2px solid var(--dark);
+        border-radius: 50px;
+        font-family: var(--font-heading);
+        font-size: 1rem;
+        font-weight: 700;
+        color: var(--dark);
+        background: transparent;
+        cursor: pointer;
+        transition:
+            background 0.3s,
+            color 0.3s;
+    }
+
+    .form-submit:hover {
+        background: var(--dark);
+        color: #fff;
+    }
+</style>

@@ -1,0 +1,168 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import CtaButton from "../components/CtaButton.astro";
+import PageHero from "../components/PageHero.astro";
+
+const techGroups = [
+    {
+        title: "Frontend",
+        items: [
+            "React",
+            "Angular",
+            "TypeScript",
+            "React Native",
+            "Responsive Design",
+            "Mobile-first",
+        ],
+    },
+    {
+        title: "Backend",
+        items: [
+            "Java",
+            "Spring Boot",
+            "Spring Cloud",
+            "NodeJS",
+            "Microservices",
+            "REST-APIs",
+        ],
+    },
+    {
+        title: "Datenbanken & Infrastruktur",
+        items: [
+            "SQL",
+            "NoSQL",
+            "Cloud-basierte Lösungen",
+            "CI/CD",
+            "Docker",
+            "DevOps",
+        ],
+    },
+    {
+        title: "Methoden & Tools",
+        items: [
+            "Agile Entwicklung",
+            "Scrum",
+            "Kanban",
+            "Lean Startup",
+            "MVP-Entwicklung",
+            "Projektmanagement",
+        ],
+    },
+];
+---
+
+<BaseLayout
+    title="Technologien - depero"
+    description="Die Technologien und Methoden, die depero für Ihre Softwareentwicklung einsetzt: Java, Spring, React, Angular, Cloud, Agile und mehr."
+>
+    <main>
+        <PageHero
+            title="Technologien"
+            background="linear-gradient(300deg, #c5daf9, #dbffea)"
+        />
+
+        <section class="section-padding">
+            <div class="container content-width">
+                <p class="intro-text">
+                    Wir setzen auf moderne, bewährte Technologien, um
+                    maßgeschneiderte Softwarelösungen zu entwickeln – von der
+                    Konzeption bis zum Betrieb.
+                </p>
+            </div>
+        </section>
+
+        <section class="section-padding" style="background: var(--light-bg)">
+            <div class="container">
+                <div class="tech-grid">
+                    {
+                        techGroups.map((group) => (
+                            <div class="tech-group">
+                                <h2 class="tech-group-title">{group.title}</h2>
+                                <ul class="tech-list">
+                                    {group.items.map((item) => (
+                                        <li class="tech-item">{item}</li>
+                                    ))}
+                                </ul>
+                            </div>
+                        ))
+                    }
+                </div>
+            </div>
+        </section>
+
+        <section class="section-padding section-cta">
+            <div class="container" style="text-align: center">
+                <p class="cta-text">
+                    Sie haben ein konkretes Projekt im Kopf? Sprechen Sie uns
+                    an.
+                </p>
+                <CtaButton href="/kontakt/" label="Jetzt kontaktieren" />
+            </div>
+        </section>
+    </main>
+</BaseLayout>
+
+<style>
+    .content-width {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .intro-text {
+        font-size: 1.15rem;
+        line-height: 1.8;
+        color: #444;
+        text-align: center;
+    }
+
+    .tech-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 28px;
+    }
+
+    .tech-group {
+        padding: 28px;
+        background: #fff;
+        border-radius: 12px;
+        border: 1px solid var(--border);
+    }
+
+    .tech-group-title {
+        font-family: var(--font-heading);
+        font-size: 1.3rem;
+        color: var(--accent);
+        margin-bottom: 16px;
+        padding-bottom: 12px;
+        border-bottom: 2px solid var(--accent);
+    }
+
+    .tech-list {
+        list-style: none;
+    }
+
+    .tech-item {
+        padding: 8px 0;
+        font-size: 0.95rem;
+        color: #555;
+        line-height: 1.5;
+    }
+
+    .tech-item::before {
+        content: "▸ ";
+        color: var(--accent);
+        font-weight: 700;
+    }
+
+    .cta-text {
+        font-size: 1.4rem;
+        font-family: var(--font-heading);
+        margin-bottom: 24px;
+    }
+
+    @media (max-width: 750px) {
+        .tech-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>

@@ -1,0 +1,113 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import ContactForm from "../components/ContactForm.astro";
+import PageHero from "../components/PageHero.astro";
+---
+
+<BaseLayout
+    title="Kontakt depero GmbH - Softwareentwicklung nach Maß"
+    description="Kontaktieren Sie depero GmbH. Telefon: 02565 9199120. Erreichbar Montag bis Freitag 08:00 – 18:00."
+>
+    <main>
+        <PageHero title="Kontakt" />
+        <section class="section-padding">
+            <div class="container">
+                <div class="contact-layout">
+                    <div class="contact-info">
+                        <h2 class="section-heading">So erreichen Sie uns</h2>
+
+                        <div class="info-block">
+                            <h3>Öffnungszeiten</h3>
+                            <p>Montag – Freitag<br />08:00 – 18:00</p>
+                        </div>
+
+                        <div class="info-block">
+                            <h3>Telefon</h3>
+                            <p>
+                                <a href="tel:025659199120">02565 9199120</a> (Dennis
+                                Langlitz)<br />
+                                <a href="tel:025659199121">02565 9199121</a> (Peter
+                                Rothkamp)<br />
+                                <a href="tel:025659199123">02565 9199123</a> (Robin
+                                van der Wals)
+                            </p>
+                        </div>
+
+                        <div class="info-block">
+                            <h3>E-Mail</h3>
+                            <p>
+                                <a href="mailto:info@depero.de"
+                                    >info@depero.de</a
+                                >
+                            </p>
+                        </div>
+
+                        <div class="info-block">
+                            <h3>Adresse</h3>
+                            <p>
+                                depero GmbH<br />
+                                Pfarrer-Pohl-Weg 4<br />
+                                48599 Gronau
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="contact-form-wrap">
+                        <h2 class="section-heading">Schreiben Sie uns</h2>
+                        <ContactForm />
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+</BaseLayout>
+
+<style>
+    .section-heading {
+        font-size: 1.5rem;
+        margin-bottom: 24px;
+        color: var(--dark);
+    }
+
+    .contact-layout {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 60px;
+        align-items: start;
+    }
+
+    .info-block {
+        margin-bottom: 28px;
+    }
+
+    .info-block h3 {
+        font-family: var(--font-heading);
+        font-size: 1.05rem;
+        color: var(--accent);
+        margin-bottom: 6px;
+    }
+
+    .info-block p {
+        font-size: 0.95rem;
+        color: #555;
+        line-height: 1.7;
+    }
+
+    .info-block a {
+        color: var(--dark);
+        text-decoration: underline;
+        text-underline-offset: 2px;
+        transition: color 0.2s;
+    }
+
+    .info-block a:hover {
+        color: var(--accent);
+    }
+
+    @media (max-width: 970px) {
+        .contact-layout {
+            grid-template-columns: 1fr;
+            gap: 40px;
+        }
+    }
+</style>

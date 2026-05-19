@@ -1,0 +1,67 @@
+---
+export interface Props {
+    date: string;
+    event: string;
+}
+
+const { date, event } = Astro.props;
+---
+
+<div class="timeline-entry">
+    <div class="timeline-dot"></div>
+    <div class="timeline-content">
+        <span class="timeline-date">{date}</span>
+        <p class="timeline-event">{event}</p>
+    </div>
+</div>
+
+<style>
+    .timeline-entry {
+        display: flex;
+        gap: 20px;
+        padding-bottom: 28px;
+        position: relative;
+    }
+
+    .timeline-entry:not(:last-child)::before {
+        content: "";
+        position: absolute;
+        left: 11px;
+        top: 28px;
+        bottom: 0;
+        width: 2px;
+        background: var(--border);
+    }
+
+    .timeline-dot {
+        flex-shrink: 0;
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        background: var(--accent);
+        border: 3px solid #fff;
+        box-shadow: 0 0 0 2px var(--accent);
+        margin-top: 2px;
+    }
+
+    .timeline-content {
+        flex: 1;
+        padding-top: 2px;
+    }
+
+    .timeline-date {
+        display: inline-block;
+        font-size: 0.8rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: var(--accent);
+        margin-bottom: 4px;
+    }
+
+    .timeline-event {
+        font-size: 1rem;
+        color: #555;
+        line-height: 1.5;
+    }
+</style>

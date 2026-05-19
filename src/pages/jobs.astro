@@ -1,0 +1,160 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import CtaButton from "../components/CtaButton.astro";
+import PageHero from "../components/PageHero.astro";
+---
+
+<BaseLayout
+    title="Jobs bei depero GmbH"
+    description="Wir verstärken unser Java-Team. Java Softwareentwickler (m/w/d) gesucht. Bewirb dich jetzt bei depero."
+>
+    <main>
+        <PageHero
+            title="Jobs"
+            subtitle="Wir verstärken unser Java-Team"
+            background="linear-gradient(300deg, #fcdabd, #cbdef4)"
+        />
+        <section class="section-padding">
+            <div class="container content-width">
+                <h2 class="section-heading">Java Softwareentwickler (m/w/d)</h2>
+
+                <blockquote class="pitch">
+                    "Wir suchen jemanden, der schon einmal einen Satz gesagt hat
+                    wie: 'Das bauen wir lieber sauber – sonst ärgern wir uns in
+                    zwei Jahren.'"
+                </blockquote>
+
+                <h3 class="sub-heading">Dein Alltag bei uns:</h3>
+                <ul class="list">
+                    <li>
+                        Java, Spring Boot / Spring Cloud, React, Angular und
+                        TypeScript
+                    </li>
+                    <li>Agile Teams, reale Kundenprobleme</li>
+                </ul>
+
+                <div class="cols">
+                    <div class="col">
+                        <h3 class="sub-heading">Was wir nicht haben:</h3>
+                        <ul class="list list--cross">
+                            <li>unnötige Hierarchien</li>
+                            <li>endlose Entscheidungswege</li>
+                            <li>Management-Folien über "Innovation"</li>
+                        </ul>
+                    </div>
+                    <div class="col">
+                        <h3 class="sub-heading">Was wir haben:</h3>
+                        <ul class="list list--check">
+                            <li>Entwickler, die gerne entwickeln</li>
+                            <li>moderne Technologien</li>
+                            <li>ehrliche Kommunikation</li>
+                            <li>flexible Arbeitszeiten und Home-Office</li>
+                            <li>
+                                faire Bezahlung mit Beteiligung am
+                                Unternehmenserfolg
+                            </li>
+                            <li>Weiterbildung und Raum für technische Ideen</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h3 class="sub-heading">Wen wir suchen:</h3>
+                <ul class="list">
+                    <li>Erfahrene Entwickler, die Java wirklich können</li>
+                    <li>gerne Verantwortung übernehmen</li>
+                    <li>Software nicht nur schreiben, sondern durchdenken</li>
+                </ul>
+            </div>
+        </section>
+
+        <section
+            class="section-padding section-cta"
+            style="background: var(--light-bg)"
+        >
+            <div class="container" style="text-align: center">
+                <p class="cta-text">
+                    Lust dabei zu sein? Wir freuen uns auf deine Bewerbung!
+                </p>
+                <CtaButton href="/kontakt/" label="Jetzt bewerben" />
+            </div>
+        </section>
+    </main>
+</BaseLayout>
+
+<style>
+    .content-width {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .section-heading {
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+        color: var(--dark);
+    }
+
+    .sub-heading {
+        font-family: var(--font-heading);
+        font-size: 1.15rem;
+        margin: 28px 0 12px;
+        color: var(--dark);
+    }
+
+    .pitch {
+        font-size: 1.15rem;
+        font-style: italic;
+        color: #555;
+        border-left: 4px solid var(--accent);
+        padding: 16px 20px;
+        margin: 0 0 24px;
+        line-height: 1.6;
+    }
+
+    .list {
+        list-style: none;
+    }
+
+    .list li {
+        padding: 8px 0 8px 24px;
+        position: relative;
+        font-size: 1rem;
+        color: #555;
+        line-height: 1.5;
+    }
+
+    .list li::before {
+        position: absolute;
+        left: 0;
+        font-weight: 700;
+    }
+
+    .list--cross li::before {
+        content: "✗";
+        color: #e74c3c;
+    }
+
+    .list--check li::before {
+        content: "✓";
+        color: var(--accent);
+    }
+
+    .cols {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+        margin: 8px 0;
+    }
+
+    .cta-text {
+        font-size: 1.4rem;
+        font-family: var(--font-heading);
+        margin-bottom: 24px;
+    }
+
+    @media (max-width: 750px) {
+        .cols {
+            grid-template-columns: 1fr;
+            gap: 0;
+        }
+    }
+</style>
