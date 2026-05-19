@@ -5,6 +5,8 @@ import rakete from "../assets/Rakete.png";
 import design from "../assets/Softwaredesign.png";
 import digitalisierung from "../assets/Digitalisierung.png";
 import entwicklung from "../assets/Produktentwicklung.png";
+import businessAnalyse from "../assets/Business-Analyse.png";
+import projektmanagement from "../assets/Projektmanagement.png";
 
 export interface Slide {
     id: string;
@@ -72,7 +74,29 @@ const slides: Slide[] = [
         ctaHref: "/leistungen/digitalisierung/",
         bgGradient: "linear-gradient(300deg, #fcdbcf, #d4f4e9)",
         image: digitalisierung,
-        imageGradient: undefined,
+        imageGradient: "linear-gradient(#f4e996, #f1c25f)",
+    },
+    {
+        id: "business-analyse",
+        heading: "Business Analyse",
+        subtext:
+            "Die Business-Analyse ist ein entscheidender Prozess für Softwareunternehmen. Sie ermöglicht es, die Effizienz und Effektivität der Geschäftsabläufe zu optimieren.",
+        ctaLabel: "Entdecken Sie Ihr Potenzial",
+        ctaHref: "/leistungen/business-analyse/",
+        bgGradient: "linear-gradient(300deg, #e2f7ff, #defcbd)",
+        image: businessAnalyse,
+        imageGradient: "linear-gradient(#96f4d7, #5ff16a)",
+    },
+    {
+        id: "projektmanagement",
+        heading: "Projektmanagement",
+        subtext:
+            "Die Entwicklung großartiger Software erfordert nicht nur technisches Know-how, sondern auch effektives Projektmanagement. Bei depero sind wir stolz auf unsere Fähigkeit, Projekte reibungslos und termingerecht abzuschließen.",
+        ctaLabel: "Gemeinsam zum Erfolg",
+        ctaHref: "/leistungen/projektmanagement/",
+        bgGradient: "linear-gradient(300deg, #9fecfc, #d2ddef)",
+        image: projektmanagement,
+        imageGradient: "linear-gradient(#8987ff, #d79dea)",
     },
 ];
 
