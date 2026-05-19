@@ -130,14 +130,7 @@ const pageDesc =
         </section>
 
         <section class="section-padding team-section">
-            <div class="team-image">
-                <Image
-                    src={team}
-                    alt="depero team"
-                    width={1024}
-                    class="team-img"
-                />
-            </div>
+            <Image src={team} alt="depero team" inferSize />
             <div class="team-content">
                 <h2 class="section-title">
                     Setzen Sie auf Ein Team aus kreativen Köpfen...
@@ -492,17 +485,6 @@ const pageDesc =
         line-height: 1.8;
         color: #444;
         margin-bottom: 40px;
-    }
-
-    .team-image {
-        min-width: 0;
-    }
-
-    .team-img {
-        width: 100% !important;
-        height: auto !important;
-        border-radius: 12px;
-        display: block;
     }
 
     .why-section {
