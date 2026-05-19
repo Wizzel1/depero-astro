@@ -3,6 +3,7 @@
     id="cookie-banner"
     role="dialog"
     aria-label="Cookie Einstellungen"
+    transition:persist
 >
     <p class="cookie-text">
         Wir verwenden Cookies, um Ihnen den bestmöglichen Service zu
@@ -29,7 +30,7 @@
 </div>
 
 <script>
-    document.addEventListener("DOMContentLoaded", () => {
+    (() => {
         const banner = document.getElementById("cookie-banner");
         const acceptBtn = document.getElementById("cookie-accept");
         const declineBtn = document.getElementById("cookie-decline");
@@ -39,6 +40,7 @@
         const dismissed = localStorage.getItem("cookie-consent");
         if (dismissed) {
             banner.style.display = "none";
+            return;
         }
 
         const dismiss = (value) => {
@@ -48,7 +50,7 @@
 
         acceptBtn?.addEventListener("click", () => dismiss("accepted"));
         declineBtn?.addEventListener("click", () => dismiss("declined"));
-    });
+    })();
 </script>
 
 <style>

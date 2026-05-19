@@ -1,4 +1,5 @@
 ---
+import { ClientRouter } from "astro:transitions";
 import CookieBanner from "../components/CookieBanner.astro";
 import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
@@ -10,6 +11,27 @@ export interface Props {
 }
 
 const { title, description, ogImage = "/favicon.svg" } = Astro.props;
+
+const pageTransition = {
+    forwards: {
+        old: { name: "dp-fade-out", duration: "0.15s", easing: "ease-in" },
+        new: {
+            name: "dp-fade-in-up",
+            duration: "0.35s",
+            easing: "ease-out",
+            delay: "0.1s",
+        },
+    },
+    backwards: {
+        old: { name: "dp-fade-out-down", duration: "0.15s", easing: "ease-in" },
+        new: {
+            name: "dp-fade-in",
+            duration: "0.35s",
+            easing: "ease-out",
+            delay: "0.1s",
+        },
+    },
+};
 ---
 
 <!doctype html>
@@ -28,6 +50,8 @@ const { title, description, ogImage = "/favicon.svg" } = Astro.props;
         <meta property="og:image" content={ogImage} />
         <meta name="twitter:card" content="summary_large_image" />
 
+        <ClientRouter fallback="none" />
+
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link
@@ -37,7 +61,7 @@ const { title, description, ogImage = "/favicon.svg" } = Astro.props;
 
         <slot name="head" />
     </head>
-    <body>
+    <body transition:animate={pageTransition}>
         <Header />
         <slot />
         <Footer />
@@ -127,5 +151,45 @@ const { title, description, ogImage = "/favicon.svg" } = Astro.props;
         clip: rect(0, 0, 0, 0);
         white-space: nowrap;
         border-width: 0;
+    }
+
+    @keyframes dp-fade-in-up {
+        from {
+            opacity: 0;
+            transform: translateY(16px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes dp-fade-out {
+        from {
+            opacity: 1;
+        }
+        to {
+            opacity: 0;
+        }
+    }
+
+    @keyframes dp-fade-in {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+
+    @keyframes dp-fade-out-down {
+        from {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        to {
+            opacity: 0;
+            transform: translateY(16px);
+        }
     }
 </style>
