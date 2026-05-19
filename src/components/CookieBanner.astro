@@ -1,0 +1,122 @@
+<div
+    class="cookie-banner"
+    id="cookie-banner"
+    role="dialog"
+    aria-label="Cookie Einstellungen"
+>
+    <p class="cookie-text">
+        Wir verwenden Cookies, um Ihnen den bestmöglichen Service zu
+        gewährleisten. Mehr Informationen dazu finden Sie in unserer
+        <a href="/datenschutzerklaerung/">Datenschutzerklärung</a>.
+    </p>
+    <div class="cookie-actions">
+        <button
+            class="cookie-btn cookie-btn--settings"
+            id="cookie-settings"
+            type="button">Cookie Einstellung</button
+        >
+        <button
+            class="cookie-btn cookie-btn--decline"
+            id="cookie-decline"
+            type="button">Ablehnen</button
+        >
+        <button
+            class="cookie-btn cookie-btn--accept"
+            id="cookie-accept"
+            type="button">Alle Cookies akzeptieren</button
+        >
+    </div>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const banner = document.getElementById("cookie-banner");
+        const acceptBtn = document.getElementById("cookie-accept");
+        const declineBtn = document.getElementById("cookie-decline");
+
+        if (!banner) return;
+
+        const dismissed = localStorage.getItem("cookie-consent");
+        if (dismissed) {
+            banner.style.display = "none";
+        }
+
+        const dismiss = (value) => {
+            localStorage.setItem("cookie-consent", value);
+            banner.style.display = "none";
+        };
+
+        acceptBtn?.addEventListener("click", () => dismiss("accepted"));
+        declineBtn?.addEventListener("click", () => dismiss("declined"));
+    });
+</script>
+
+<style>
+    .cookie-banner {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 9999;
+        background: #d4b184;
+        padding: 20px 24px;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        align-items: center;
+        box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .cookie-text {
+        font-size: 0.9rem;
+        color: #333;
+        text-align: center;
+        line-height: 1.5;
+        max-width: 800px;
+    }
+
+    .cookie-text a {
+        color: #333;
+        text-decoration: underline;
+        text-underline-offset: 2px;
+    }
+
+    .cookie-actions {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .cookie-btn {
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        font-size: 0.85rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: opacity 0.2s;
+    }
+
+    .cookie-btn:hover {
+        opacity: 0.85;
+    }
+
+    .cookie-btn--accept {
+        background: #c97500;
+        color: #fff;
+    }
+
+    .cookie-btn--decline {
+        background: transparent;
+        color: #333;
+        border: 1px solid #333;
+    }
+
+    .cookie-btn--settings {
+        background: transparent;
+        color: #333;
+        text-decoration: underline;
+        text-underline-offset: 2px;
+    }
+</style>

@@ -1,0 +1,151 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PageHero from "../components/PageHero.astro";
+---
+
+<BaseLayout
+    title="Impressum - depero GmbH - Individualsoftware"
+    description="Impressum der depero GmbH mit Angaben gemäß § 5 DDG."
+>
+    <main>
+        <PageHero title="Impressum" />
+        <section class="section-padding">
+            <div class="container content-width">
+                <p class="legal-note">Angaben gemäß § 5 DDG</p>
+
+                <div class="legal-block">
+                    <h2>depero GmbH</h2>
+                    <p>Pfarrer-Pohl-Weg 4<br />48599 Gronau</p>
+                </div>
+
+                <div class="legal-block">
+                    <h2>Vertreten durch</h2>
+                    <p>
+                        Dennis Langlitz<br />
+                        Peter Rothkamp<br />
+                        Robin van der Wals
+                    </p>
+                </div>
+
+                <div class="legal-block">
+                    <h2>Kontakt</h2>
+                    <p>
+                        E-Mail: <a href="mailto:info@depero.de"
+                            >info@depero.de</a
+                        ><br />
+                        Telefon: <a href="tel:025659199120">02565 9199120</a>
+                    </p>
+                    <p>
+                        Dennis Langlitz: <a
+                            href="mailto:dennis.langlitz@depero.de"
+                            >dennis.langlitz@depero.de</a
+                        >, 02565 9199121<br />
+                        Peter Rothkamp: <a
+                            href="mailto:peter.rothkamp@depero.de"
+                            >peter.rothkamp@depero.de</a
+                        >, 02565 9199122<br />
+                        Robin van der Wals: <a
+                            href="mailto:robin.van.der.wals@depero.de"
+                            >robin.van.der.wals@depero.de</a
+                        >, 02565 9199123
+                    </p>
+                </div>
+
+                <div class="legal-block">
+                    <h2>Umsatzsteuer-ID</h2>
+                    <p>DE 329 554 339</p>
+                </div>
+
+                <div class="legal-block">
+                    <h2>Steuernummer</h2>
+                    <p>301/5809/1237</p>
+                </div>
+
+                <div class="legal-block">
+                    <h2>Handelsregister</h2>
+                    <p>Coesfeld (HRB): 18791</p>
+                </div>
+
+                <div class="legal-divider"></div>
+
+                <div class="legal-block">
+                    <h2>Haftung für Inhalte</h2>
+                    <p>
+                        Als Diensteanbieter sind wir gemäß § 7 Abs.1 DDG für
+                        eigene Inhalte auf diesen Seiten nach den allgemeinen
+                        Gesetzen verantwortlich. Nach §§ 8 bis 10 DDG sind wir
+                        als Diensteanbieter jedoch nicht verpflichtet,
+                        übermittelte oder gespeicherte fremde Informationen zu
+                        überwachen oder nach Umständen zu forschen, die auf eine
+                        rechtswidrige Tätigkeit hinweisen.
+                    </p>
+                </div>
+
+                <div class="legal-block">
+                    <h2>Haftung für Links</h2>
+                    <p>
+                        Unser Angebot enthält Links zu externen Websites
+                        Dritter, auf deren Inhalte wir keinen Einfluss haben.
+                        Deshalb können wir für diese fremden Inhalte auch keine
+                        Gewähr übernehmen. Für die Inhalte der verlinkten Seiten
+                        ist stets der jeweilige Anbieter oder Betreiber der
+                        Seiten verantwortlich.
+                    </p>
+                </div>
+
+                <div class="legal-block">
+                    <h2>Urheberrecht</h2>
+                    <p>
+                        Die durch die Seitenbetreiber erstellten Inhalte und
+                        Werke auf diesen Seiten unterliegen dem deutschen
+                        Urheberrecht. Die Vervielfältigung, Bearbeitung,
+                        Verbreitung und jede Art der Verwertung außerhalb der
+                        Grenzen des Urheberrechtes bedürfen der schriftlichen
+                        Zustimmung des jeweiligen Autors bzw. Erstellers.
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+</BaseLayout>
+
+<style>
+    .content-width {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .legal-note {
+        font-size: 0.9rem;
+        color: #888;
+        margin-bottom: 32px;
+    }
+
+    .legal-block {
+        margin-bottom: 28px;
+    }
+
+    .legal-block h2 {
+        font-family: var(--font-heading);
+        font-size: 1.15rem;
+        color: var(--dark);
+        margin-bottom: 8px;
+    }
+
+    .legal-block p {
+        font-size: 0.95rem;
+        color: #555;
+        line-height: 1.7;
+    }
+
+    .legal-block a {
+        color: var(--accent);
+        text-decoration: underline;
+    }
+
+    .legal-divider {
+        height: 1px;
+        background: var(--border);
+        margin: 32px 0;
+    }
+</style>
