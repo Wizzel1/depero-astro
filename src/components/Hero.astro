@@ -177,7 +177,7 @@ const { activeSlide = 0 } = Astro.props as { activeSlide?: number };
         }
     }
 
-    document.addEventListener("DOMContentLoaded", () => {
+    document.addEventListener("astro:page-load", () => {
         new HeroSlider();
     });
 </script>
