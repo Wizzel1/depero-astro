@@ -21,7 +21,13 @@ const services = [
 <header class="header" transition:name="header">
     <div class="header-inner container">
         <a href="/" class="logo" aria-label="depero — zur Startseite">
-            <Image src={logo} alt="depero Logo" width="142" height="51" />
+            <Image
+                src={logo}
+                alt="depero Logo"
+                width="142"
+                height="51"
+                loading={"eager"}
+            />
         </a>
         <nav class="nav" aria-label="Hauptnavigation">
             <button
@@ -35,7 +41,7 @@ const services = [
             </button>
             <ul class="nav-list">
                 <li class="nav-item has-dropdown">
-                    <a href="#">Leistungen</a>
+                    <a href="/leistungen/startups">Leistungen</a>
                     <ul class="dropdown">
                         {
                             leistungen.map((item) => (
@@ -47,7 +53,7 @@ const services = [
                     </ul>
                 </li>
                 <li class="nav-item has-dropdown">
-                    <a href="#">Services &amp; Projekte</a>
+                    <a href="/projekte/vysh-me/">Services &amp; Projekte</a>
                     <ul class="dropdown">
                         {
                             services.map((item) => (
