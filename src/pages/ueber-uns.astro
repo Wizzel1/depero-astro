@@ -4,15 +4,22 @@ import TeamMember from "../components/TeamMember.astro";
 import TimelineEntry from "../components/TimelineEntry.astro";
 import CtaButton from "../components/CtaButton.astro";
 import PageHero from "../components/PageHero.astro";
+import dennisImg from "../assets/dennis.png";
+import peterImg from "../assets/peter.png";
+import robinImg from "../assets/robin.png";
+import matthiasImg from "../assets/matthias.png";
+import stefanImg from "../assets/stefan.png";
+import brittaImg from "../assets/britta.png";
+import carmenImg from "../assets/carmen.png";
 
 const team = [
-    { name: "Dennis", role: "Geschäftsführer" },
-    { name: "Peter", role: "Geschäftsführer" },
-    { name: "Robin", role: "Geschäftsführer" },
-    { name: "Matthias", role: "IT Engineer / IT Professional" },
-    { name: "Stefan", role: "IT Engineer / IT Professional" },
-    { name: "Britta", role: "Backoffice / Accounting" },
-    { name: "Carmen", role: "Key Account Managerin" },
+    { name: "Dennis", role: "Geschäftsführer", image: dennisImg },
+    { name: "Peter", role: "Geschäftsführer", image: peterImg },
+    { name: "Robin", role: "Geschäftsführer", image: robinImg },
+    { name: "Matthias", role: "IT Engineer / IT Professional", image: matthiasImg },
+    { name: "Stefan", role: "IT Engineer / IT Professional", image: stefanImg },
+    { name: "Britta", role: "Backoffice / Accounting", image: brittaImg },
+    { name: "Carmen", role: "Key Account Managerin", image: carmenImg },
 ];
 
 const values = [
@@ -103,7 +110,7 @@ const timeline = [
                 <div class="team-grid">
                     {
                         team.map((m) => (
-                            <TeamMember name={m.name} role={m.role} />
+                            <TeamMember name={m.name} role={m.role} image={m.image} />
                         ))
                     }
                 </div>
